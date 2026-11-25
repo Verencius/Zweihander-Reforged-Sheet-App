@@ -558,3 +558,13 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 .sheet-action-points>h3{text-align:center}
 @media screen and (max-width:1200px){.sheet-combat>.sheet-session-controls{grid-column:1 / -1;grid-row:3}}
 @media screen and (max-width:500px){.sheet-session-controls{grid-template-columns:minmax(0,2fr) minmax(95px,1fr);gap:8px}.sheet-action-points>h3{font-size:12px}.sheet-session-controls .sheet-initiative .overview-controls label{grid-template-columns:1fr 60px}}
+
+#print-root .print-session-controls{grid-column:1;grid-row:2;display:grid;grid-template-columns:minmax(0,3fr) minmax(24mm,1fr);gap:2mm;align-items:stretch;min-width:0}
+#print-root .print-session-controls>.sheet-panel{min-width:0;margin-bottom:0}
+#print-root .print-session-controls .initiative-inline-controls{grid-template-columns:1fr;padding:5px}
+#print-root .print-session-controls .sheet-initiative .overview-controls label{display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:5px}
+#print-root .print-session-controls .sheet-action-points{display:flex;flex-direction:column}
+#print-root .print-session-controls .sheet-action-points .overview-controls{flex:1;display:flex;align-items:center;justify-content:center;padding:6px}
+#print-root .print-session-controls .sheet-action-points label{display:flex;align-items:center;justify-content:center}
+#print-root .print-session-controls .sheet-action-points .print-field-value{font-size:24px;font-weight:700;text-align:center}
+#print-root .print-session-controls .sheet-action-points h3{font-size:10px;text-align:center;white-space:nowrap}
