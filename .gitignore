@@ -1,0 +1,12 @@
+# Local character backups and generated QA artifacts
+*.json
+!package.json
+!package-lock.json
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.webp
+__pycache__/
+node_modules/
+tmp/
