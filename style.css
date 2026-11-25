@@ -535,3 +535,9 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .print-stress-track .print-track-square{order:1}
 #print-root .print-stress-track .print-stage-dot{order:2}
 #print-root .print-stress-track .print-track-row{flex-direction:row}
+/* Stress: text, saved-state dot, then the writable box. */
+#print-root .print-stress-track .print-track-label{order:0}
+#print-root .print-stress-track .print-stage-dot{order:1}
+#print-root .print-stress-track .print-track-square{order:2}
+/* Screen-only: keep Initiative on the right; the printed position is unchanged. */
+@media screen and (min-width:1201px){.sheet-combat>.sheet-skills-panel{grid-column:1;grid-row:1 / span 2}.sheet-combat>.sheet-peril{grid-column:2;grid-row:1}.sheet-combat>.sheet-damage{grid-column:3;grid-row:1}.sheet-combat>.sheet-initiative{grid-column:2 / span 2;grid-row:2}}
