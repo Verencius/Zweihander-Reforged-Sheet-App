@@ -558,7 +558,6 @@ function fieldHint(key){
  if(/^profession_.*_bonus_/.test(key))return 'Matching Purchased checkbox adds +1 to the selected attribute bonus.';
  if(/^profession_.*_attribute$/.test(key))return 'Purchased adjustment adds +5% to the selected attribute and its skills.';
  if(key==='scars_number')return 'With purchased Spiritual Defense, each scar adds +1 Damage Threshold; Heavy armor blocks this bonus.';
- if(key==='silver')return 'Each full 1,000 SP adds 1 burden and subtracts 1 Initiative, matching the supplied formula.';
  if(key==='burden_penalty')return 'Extra burden is subtracted from Initiative, in addition to carrying and silver penalties.';
  if(key==='peril_condition_track')return 'Peril track penalty is shown separately from the template skill total. Steam-powered gives +1/+2/+3 Initiative at −5/−10/−15.';
  if(key==='peril_stress')return 'Stressed / Frightened / Terrified: −2/−4/−6 inflicted damage and peril. Disables Servant of the Steward; enables Supernatural Paranoia.';
