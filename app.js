@@ -40,7 +40,7 @@ function calculate(v){
 }
 
 let characters=[],campaigns=[],current,tab='Overview',storage=true;
-function blank(){return {id:globalThis.crypto?.randomUUID?.()||String(Date.now())+'-'+Math.random().toString(36).slice(2),values:Object.fromEntries([...ATTRS.map(a=>['attribute_'+a.toLowerCase(),25]),['action_points',3]])};}
+function blank(){return {id:globalThis.crypto?.randomUUID?.()||String(Date.now())+'-'+Math.random().toString(36).slice(2),values:Object.fromEntries([...ATTRS.map(a=>['attribute_'+a.toLowerCase(),30]),['action_points',3]])};}
 try{const stored=JSON.parse(localStorage.getItem('zweihander-forge-v1')||'null');if(Array.isArray(stored)&&stored.length&&stored.every(c=>c&&typeof c.id==='string'&&c.values&&typeof c.values==='object'))characters=stored;}catch{storage=false;}
 try{const storedCampaigns=JSON.parse(localStorage.getItem('zweihander-forge-campaigns-v1')||'[]');if(Array.isArray(storedCampaigns))campaigns=storedCampaigns.filter(c=>c&&typeof c.id==='string'&&typeof c.name==='string');}catch{}
 if(!characters.length)characters=[blank()];current=characters[0];
