@@ -553,7 +553,6 @@ function fitPrintPages(){document.querySelectorAll('#print-root .print-page').fo
  const spare=(height-body.scrollHeight*scale)/scale;if(notes&&spare>85){notes.style.display='block';notes.style.height=`${spare-18}px`;}
  body.style.transform=`scale(${scale})`;});}
 function fieldHint(key){
- if(/^attribute_/.test(key))return 'All purchased +5% attribute adjustments are applied first. The adjusted percentage’s tens digit is then added to purchased bonus advances, ancestral bonuses and custom bonuses.';
  if(/_bonus_custom$/.test(key))return 'Adds directly to this attribute bonus, affecting any threshold, initiative or capacity that uses it.';
  if(/^profession_.*_skill_/.test(key))return 'Matching Purchased checkbox grants one rank: +10%, capped at three ranks per skill.';
  if(/^profession_.*_bonus_/.test(key))return 'Matching Purchased checkbox adds +1 to the selected attribute bonus.';
