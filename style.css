@@ -482,3 +482,27 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 .sheet-silver>.sheet-silver-amount{flex:1;display:flex;align-items:center;justify-content:center}
 .sheet-silver>.info-label{flex:0 0 auto;margin-top:auto}
 .sheet-inventory>.sheet-objects,#print-root .print-equipment>.sheet-objects{align-self:stretch}
+
+/* Large, writable tabletop tracks in the printed sheet only. */
+#print-root .print-condition-track{border:3px double #b3a077;background:linear-gradient(125deg,#ede2ca55,transparent 60%);padding:7px 6px;position:relative;min-width:0}
+#print-root .print-condition-track::before,#print-root .print-condition-track::after{content:'◆';position:absolute;color:#a18a58;font-size:8px;background:#f7f2e6;line-height:9px;padding:0 1px}
+#print-root .print-condition-track::before{top:-5px;left:4px}#print-root .print-condition-track::after{bottom:-5px;right:4px}
+#print-root .print-condition-track h4{font:700 11px/1.2 Georgia,serif;text-align:center;text-transform:uppercase;letter-spacing:.2px;color:#292017;margin:0 0 8px;padding-bottom:5px;border-bottom:1px solid #b3a077}
+#print-root .print-track-rows{display:grid;gap:10px}
+#print-root .print-track-row{display:flex;align-items:center;gap:7px;min-height:23px;break-inside:avoid}
+#print-root .print-track-square{display:block;flex:0 0 19px;width:19px;height:19px;border:1.5px solid #292017;background:#faf7ef;box-sizing:border-box}
+#print-root .print-track-square.is-checked{background:#a62229;box-shadow:inset 0 0 0 3px #faf7ef}
+#print-root .print-track-label{min-width:0;font-family:Georgia,serif;color:#a62229}
+#print-root .print-track-label strong{display:block;font-size:11px;line-height:1.2;text-transform:uppercase}
+#print-root .print-track-label small{display:block;font-size:9px;line-height:1.2;margin-top:2px}
+#print-root .print-damage-track .print-track-row,#print-root .print-stress-track .print-track-row{flex-direction:row-reverse}
+#print-root .print-damage-track .print-track-label{flex:1;text-align:right}
+#print-root .print-stress-track .print-track-label{flex:1;text-align:left}
+#print-root .print-stress-track .print-track-rows{gap:8px}
+#print-root .corruption-square{width:14px;height:14px;flex-basis:14px;border-width:1.3px}
+#print-root .corruption-safe-squares{gap:4px}
+#print-root .corruption-square.malignancy-square{width:18px;height:18px;flex-basis:18px;border-width:3px}
+#print-root .corruption-track{gap:5px 10px;padding:3px 0}
+#print-root .sheet-skills .rank-marks{gap:3px;vertical-align:middle}
+#print-root .sheet-skills .rank-mark{display:inline-block;width:13px;height:13px;flex:0 0 13px;font-size:0;line-height:0;border:1.2px solid #292017;background:#faf7ef;box-sizing:border-box}
+#print-root .sheet-skills .rank-mark.is-filled{background:#a62229;box-shadow:inset 0 0 0 2px #faf7ef}
