@@ -48,3 +48,9 @@ node run-tests.cjs
 The app itself has no runtime dependencies. Python and Node.js are needed only for development.
 
 The Tracking tab has been removed. Its eight combat/session controls remain editable on Overview. Corruption and permanent corruption are on Personal, silver and equipped weapons on Equipment, and reputation on Personal. No former Tracking field is lost.
+
+## Full-library backup
+
+In Gallery, choose **Export full backup** to download `Zweihander - Full Backup.json`. It contains every character and its embedded portrait, gallery data, campaigns, assignments, lock states and the active character ID. Images are included as data URLs; no separate image folder is needed.
+
+Use **Restore backup** in Gallery to load this format (up to 50 MB). Restore validates the complete file, asks for confirmation, and adds its characters alongside the existing library. Character IDs are remapped to avoid collisions, matching campaign names are reused, and existing characters—including locked characters—are not overwritten. Importing the same backup repeatedly adds additional copies of its characters. Keep the downloaded backup independently of browser storage.

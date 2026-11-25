@@ -451,3 +451,4 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .corruption-summary .corruption-counts{font-size:9px}
 .corruption-permanent-count{font-size:12px;font-weight:500;color:var(--ink);white-space:nowrap;margin-left:6px}
 #print-root .corruption-permanent-count{font-size:8px;margin-left:4px}
+.gallery-backup-actions{display:flex;gap:8px;flex-wrap:wrap}.gallery-backup-actions button{font-size:14px;padding:9px 12px}.gallery-backup-hint{margin:-5px 0 20px;max-width:760px}
