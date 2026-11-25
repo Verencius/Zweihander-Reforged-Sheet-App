@@ -95,7 +95,6 @@ function fitPrintPages(){document.querySelectorAll('#print-root .print-page').fo
  const spare=(height-body.scrollHeight*scale)/scale;if(notes&&spare>85){notes.style.display='block';notes.style.height=`${spare-18}px`;}
  body.style.transform=`scale(${scale})`;});}
 function fieldHint(key){
- if(/_bonus_custom$/.test(key))return 'Adds directly to this attribute bonus, affecting any threshold, initiative or capacity that uses it.';
  if(key==='scars_number')return 'With purchased Spiritual Defense, each scar adds +1 Damage Threshold; Heavy armor blocks this bonus.';
  if(key==='burden_penalty')return 'Extra burden is subtracted from Initiative, in addition to carrying and silver penalties.';
  if(key==='peril_condition_track')return 'Peril track penalty is shown separately from the template skill total. Steam-powered gives +1/+2/+3 Initiative at −5/−10/−15.';
@@ -107,7 +106,6 @@ function fieldHint(key){
  if(key==='initiative_temporary')return 'Adds directly to final Initiative.';
  if(key==='reward_points')return 'Remaining RP = earned RP minus spent RP. The first 9 purchased Basic advances are free.';
  if(key==='reward_unique')return 'Each unique advance costs 10 RP.';
- if(key==='corruption'||key==='corruption_permanent')return 'Temporary and permanent corruption share one track. The safe combined maximum is 9; reaching 10 triggers a malignancy. Each permanent point reduces temporary capacity by 1.';
  return '';
 }
 function field(f){if(f.key==='corruption')f={...f,label:'Temporary Corruption',max:Math.max(0,9-(Number(current.values.corruption_permanent)||0))};if(f.key==='imageid')return '';const v=current.values[f.key]??'',id='field-'+f.key+'-'+Math.random().toString(36).slice(2);let control;const common=`id="${id}" data-key="${esc(f.key)}" ${current.locked?'disabled':''} ${fieldHint(f.key)?`aria-describedby="${id}-hint" title="${esc(fieldHint(f.key))}"`:''}`;
