@@ -449,3 +449,5 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .corruption-track{gap:3px 6px}#print-root .corruption-safe-squares{gap:2px}#print-root .corruption-square{width:8px;height:8px;flex-basis:8px}#print-root .corruption-square.is-filled{box-shadow:inset 0 0 0 1px #f7ecdc}#print-root .corruption-square.malignancy-square{width:11px;height:11px;flex-basis:11px}#print-root .corruption-track-end strong{font-size:8px}
 .corruption-summary .corruption-counts{flex-basis:100%;margin:3px 0 0;font:600 13px/1.4 system-ui,sans-serif;color:var(--ink)}
 #print-root .corruption-summary .corruption-counts{font-size:9px}
+.corruption-permanent-count{font-size:12px;font-weight:500;color:var(--ink);white-space:nowrap;margin-left:6px}
+#print-root .corruption-permanent-count{font-size:8px;margin-left:4px}
