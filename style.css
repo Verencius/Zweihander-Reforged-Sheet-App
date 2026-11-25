@@ -568,3 +568,14 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .print-session-controls .sheet-action-points label{display:flex;align-items:center;justify-content:center}
 #print-root .print-session-controls .sheet-action-points .print-field-value{font-size:24px;font-weight:700;text-align:center}
 #print-root .print-session-controls .sheet-action-points h3{font-size:10px;text-align:center;white-space:nowrap}
+
+#print-root .print-session-controls{grid-template-columns:minmax(0,1fr) 26mm;gap:2mm;align-items:stretch}
+#print-root .print-session-controls .sheet-panel>h3{padding:4px 5px;font-size:10px;line-height:1.2}
+#print-root .print-session-controls .sheet-panel>h3::after{display:none}
+#print-root .print-initiative-values{width:100%;border-collapse:collapse;font:10px/1.25 system-ui,sans-serif}
+#print-root .print-initiative-values th,#print-root .print-initiative-values td{padding:3px 6px;border-bottom:1px solid #d5cbb6}
+#print-root .print-initiative-values th{text-align:left;font-weight:400}
+#print-root .print-initiative-values td{text-align:right;width:30%;font-variant-numeric:tabular-nums}
+#print-root .print-initiative-values tr:last-child th,#print-root .print-initiative-values tr:last-child td{font-weight:700;border-bottom:0;background:#e6dbc45c}
+#print-root .print-action-writein{flex:1;min-height:17mm;display:flex;align-items:center;justify-content:center;padding:5mm}
+#print-root .print-action-writein>span{display:block;width:100%;height:8mm;border-bottom:1px solid #b3a077}
