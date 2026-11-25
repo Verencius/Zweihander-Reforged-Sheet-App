@@ -417,3 +417,8 @@ nav .campaign-nav{border-left:1px solid #a18a5870;margin-left:12px;font-size:14p
 .about-page{max-width:900px}.about-intro{padding:4px 0 20px}.about-intro .eyebrow{color:var(--gold)}.about-intro h3{font:36px Georgia,serif;color:var(--accent);margin:6px 0 10px}.about-intro>p:last-child{color:var(--muted)}
 .about-card{border-color:var(--gold);background:var(--parchment);padding:22px 24px}.about-card h4{font:700 22px Georgia,serif;color:var(--accent);margin-bottom:12px}.about-card p{line-height:1.65;overflow-wrap:anywhere}.about-card a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}.about-card a:hover{color:#731b20}.about-card .muted{margin-bottom:0}
 .about-support{border-top:3px double var(--gold)}.about-card .coffee-link{display:inline-block;padding:11px 18px;background:var(--accent);border:1px solid #861c23;border-radius:3px;color:#fff7e9;text-decoration:none;font-weight:600}.about-card .coffee-link:hover{background:#831b21;color:#fff7e9}.about-card a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+
+nav .nav-divider{height:1px;background:#a18a5866;margin:12px 4px;min-width:30px}
+nav .campaign-nav-group{display:grid;gap:3px;margin:0 0 5px 12px;padding-left:8px;border-left:1px solid #a18a5870}
+nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px;padding:8px 10px}
+@media(max-width:650px){nav .nav-divider{width:1px;height:30px;min-width:1px;flex:0 0 1px;margin:4px 8px}nav .campaign-nav-group{display:flex;margin:0;padding-left:6px;align-items:center}}
