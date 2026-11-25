@@ -452,3 +452,6 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 .corruption-permanent-count{font-size:12px;font-weight:500;color:var(--ink);white-space:nowrap;margin-left:6px}
 #print-root .corruption-permanent-count{font-size:8px;margin-left:4px}
 .gallery-backup-actions{display:flex;gap:8px;flex-wrap:wrap}.gallery-backup-actions button{font-size:14px;padding:9px 12px}.gallery-backup-hint{margin:-5px 0 20px;max-width:760px}
+
+.table-hint.info-label{margin:0;padding:5px 8px;border-top:1px solid #c9bea6;font-size:12px;line-height:1.4;font-weight:400;color:#756b5b;background:transparent}
+#print-root .table-hint.info-label{font-size:8px;line-height:1.35;padding:3px 5px;color:#756b5b}
