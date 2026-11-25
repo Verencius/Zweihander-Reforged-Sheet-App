@@ -517,3 +517,16 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 
 /* Memento + 2–5 down the left column; 6–10 down the right. */
 .sheet-objects-list,.equipment-objects-list,#print-root .sheet-objects-list{grid-template-rows:repeat(5,auto);grid-auto-flow:column;grid-template-columns:repeat(2,minmax(0,1fr))}
+
+#print-root .print-stage-dot{display:block;width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:#b1252b;margin:0 2px}
+#print-root .print-peril-track .print-track-label{flex:1}
+.threshold-modifiers{padding:6px 8px;font-size:12px;line-height:1.4;border-top:1px solid var(--line);color:var(--muted)}
+.threshold-modifiers>strong{display:block;font-size:11px;text-transform:uppercase;font-weight:600;margin-bottom:4px}
+.threshold-modifiers ul{padding:0;margin:0;list-style:none}.threshold-modifiers li{display:flex;justify-content:space-between;gap:8px;padding:2px 0}.threshold-modifiers li>b{white-space:nowrap;color:var(--ink)}
+#print-root .threshold-modifiers{font-size:8px;padding:4px 5px}#print-root .threshold-modifiers>strong{font-size:8px}
+/* Initiative follows the attribute/skill panel in the left column. */
+#print-root .print-combat-row>.sheet-skills-panel{grid-column:1;grid-row:1}
+#print-root .print-combat-row>.sheet-peril{grid-column:2;grid-row:1 / span 2}
+#print-root .print-combat-row>.sheet-damage{grid-column:3;grid-row:1 / span 2}
+#print-root .print-combat-row>.sheet-initiative{grid-column:1;grid-row:2}
+@media screen and (min-width:1201px){.sheet-combat>.sheet-skills-panel{grid-column:1;grid-row:1}.sheet-combat>.sheet-peril{grid-column:2;grid-row:1 / span 2}.sheet-combat>.sheet-damage{grid-column:3;grid-row:1 / span 2}.sheet-combat>.sheet-initiative{grid-column:1;grid-row:2}}
