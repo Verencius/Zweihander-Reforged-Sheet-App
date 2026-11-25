@@ -437,3 +437,13 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 .corruption-summary strong{color:var(--ink)}.corruption-summary>span:last-child{flex-basis:100%}
 .corruption-warning{background:#ecd1c9;color:#8c2027;border-color:#b87973}.corruption-warning strong{color:#8c2027}
 #print-root .corruption-summary{font-size:8px;padding:4px 5px;gap:2px 8px}
+
+.corruption-track{display:flex;align-items:center;flex-wrap:wrap;gap:5px 8px;flex-basis:100%}
+.corruption-safe-squares,.corruption-track-end{display:inline-flex;align-items:center;gap:4px}
+.corruption-square{display:inline-block;flex:0 0 12px;width:12px;height:12px;border:1px solid #725a34;background:#faf6eb;box-sizing:border-box}
+.corruption-square.is-filled{background:#92262a;border-color:#782125;box-shadow:inset 0 0 0 2px #f7ecdc}
+.corruption-square.is-permanent.is-filled{background:#9a7e3f;border-color:#6e5428}
+.corruption-track-end{gap:6px}.corruption-track-end strong{font-size:11px;color:var(--accent);white-space:nowrap}
+.corruption-square.malignancy-square{width:15px;height:15px;flex-basis:15px;border:3px double #92262a;transform:rotate(45deg);margin:0 3px}
+.corruption-square.malignancy-square.is-filled{background:#92262a;box-shadow:inset 0 0 0 1px #f7ecdc}
+#print-root .corruption-track{gap:3px 6px}#print-root .corruption-safe-squares{gap:2px}#print-root .corruption-square{width:8px;height:8px;flex-basis:8px}#print-root .corruption-square.is-filled{box-shadow:inset 0 0 0 1px #f7ecdc}#print-root .corruption-square.malignancy-square{width:11px;height:11px;flex-basis:11px}#print-root .corruption-track-end strong{font-size:8px}
