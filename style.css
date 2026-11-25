@@ -82,7 +82,7 @@ header{display:grid;grid-template-columns:minmax(0,9fr) minmax(0,3fr);gap:24px;a
 @media print{.portrait-column{max-width:40mm}}
 
 /* Equipment uses lined ledger panels and aligned weapon/supply columns. */
-.equipment-layout{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-areas:"armor armor armor armor" "weapons weapons weapons weapons" "tools objects objects supplies" "titles burden burden silver";gap:12px 16px;align-items:start}
+.equipment-layout{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-areas:"armor armor armor armor" "weapons weapons weapons weapons" "tools objects objects silver" "titles burden burden supplies";gap:12px 16px;align-items:start}
 .equipment-card{padding:0;margin:0;border:1px solid #37342e;border-radius:3px;background:#eeede7;overflow:hidden;min-width:0}
 .equipment-card h3{margin:0;padding:5px 8px;background:#34312c;color:#fffdf5;font:700 14px/1.4 system-ui,sans-serif;text-transform:uppercase}
 .equipment-armor{grid-area:armor}.equipment-weapons{grid-area:weapons}.equipment-initiative{grid-area:initiative}.equipment-tools{grid-area:tools}.equipment-objects{grid-area:objects}.equipment-supplies{grid-area:supplies}.equipment-titles{grid-area:titles}.equipment-burden{grid-area:burden}.equipment-silver{grid-area:silver}.equipment-capacity{grid-area:capacity}
@@ -107,7 +107,7 @@ header{display:grid;grid-template-columns:minmax(0,9fr) minmax(0,3fr);gap:24px;a
 .equipment-burden-fields{display:grid;grid-template-columns:minmax(0,4fr) minmax(70px,1fr);gap:10px}.equipment-capacity>.fields{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media screen and (max-width:1150px){.equipment-layout{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-areas:"armor armor armor" "weapons weapons weapons" "tools objects objects" "supplies burden burden" "titles titles silver"}}
 @media screen and (max-width:700px){.equipment-layout{grid-template-columns:1fr;grid-template-areas:"armor" "weapons" "tools" "objects" "supplies" "titles" "burden" "silver"}}
-@media print{.equipment-layout{gap:2mm;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-areas:"armor armor armor armor" "weapons weapons weapons weapons" "tools objects objects supplies" "titles burden burden silver"}.equipment-card h3{background:#e4e4e4;color:black;font-size:9pt}.equipment-card input:not([type=checkbox]),.equipment-card textarea{font-size:8pt;padding:2px;min-height:20px}.equipment-card .field-caption,.equipment-table th,.equipment-note{font-size:7pt}.equipment-weapons table{min-width:0}.equipment-weapons th:first-child{width:35px}.equipment-supplies th:last-child{width:28px}.equipment-objects-list{gap:0 2mm}.equipment-card{background:white}.equipment-table-scroll{overflow:visible}}
+@media print{.equipment-layout{gap:2mm;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-areas:"armor armor armor armor" "weapons weapons weapons weapons" "tools objects objects silver" "titles burden burden supplies"}.equipment-card h3{background:#e4e4e4;color:black;font-size:9pt}.equipment-card input:not([type=checkbox]),.equipment-card textarea{font-size:8pt;padding:2px;min-height:20px}.equipment-card .field-caption,.equipment-table th,.equipment-note{font-size:7pt}.equipment-weapons table{min-width:0}.equipment-weapons th:first-child{width:35px}.equipment-supplies th:last-child{width:28px}.equipment-objects-list{gap:0 2mm}.equipment-card{background:white}.equipment-table-scroll{overflow:visible}}
 
 /* Keep panel headers separate from their inner field grids. */
 .equipment-card{display:block}
@@ -270,7 +270,7 @@ body.printing #print-root{display:block;position:absolute;left:-10000px;top:0;wi
 #print-root .rank-marks{font-size:11px;gap:0;letter-spacing:0}#print-root .attribute-score{font-size:12px;margin-top:4px}#print-root .current-skill{font-size:8px;white-space:normal}
 #print-root .overview-controls{padding:5px;gap:5px}#print-root .overview-controls label{font-size:9px;gap:2px}#print-root .print-field-value{font-size:10px;white-space:pre-wrap;overflow-wrap:anywhere;font-weight:600}
 #print-root .info-label{font-size:8px;line-height:1.3;padding:3px 5px}#print-root .sheet-table-scroll{overflow:visible}#print-root .sheet-weapons{min-width:0;width:100%}
-#print-root .print-equipment{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-areas:"weapons weapons weapons weapons" "tools objects objects supplies" "titles burden burden silver";gap:2mm;margin-bottom:3mm}
+#print-root .print-equipment{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-areas:"weapons weapons weapons weapons" "tools objects objects silver" "titles burden burden supplies";gap:2mm;margin-bottom:3mm}
 #print-root .sheet-objects-list{gap:0 2mm;padding:3px 5px}#print-root .sheet-objects-list>div{font-size:10px;min-height:20px;padding:3px 0}
 #print-root .sheet-talents .talent-heading{font:700 11px Georgia,serif;padding:6px 5px 2px}#print-root .sheet-talents .sheet-text{padding:4px 5px}
 #print-root .print-professions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3mm;padding:5px}#print-root .print-professions h4{font-size:11px;margin:0 0 4px;color:var(--accent)}#print-root .print-professions ul{list-style:none;margin:0;padding:0}#print-root .print-professions li{font-size:9px;line-height:1.4;padding:2px 0;border-bottom:1px solid #d5cbb6;overflow-wrap:anywhere}
@@ -455,3 +455,16 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 
 .table-hint.info-label{margin:0;padding:5px 8px;border-top:1px solid #c9bea6;font-size:12px;line-height:1.4;font-weight:400;color:#756b5b;background:transparent}
 #print-root .table-hint.info-label{font-size:8px;line-height:1.35;padding:3px 5px;color:#756b5b}
+
+.sheet-inventory{grid-template-columns:repeat(4,minmax(0,1fr))}
+.sheet-inventory>.sheet-tools{grid-column:1;grid-row:1}
+.sheet-inventory>.sheet-objects{grid-column:2 / span 2;grid-row:1}
+.sheet-inventory>.sheet-silver{grid-column:4;grid-row:1}
+.sheet-silver-amount{text-align:center;font-size:18px;font-weight:700;padding:10px 8px;color:var(--ink)}
+#print-root .print-equipment{grid-template-columns:repeat(4,minmax(0,1fr))}
+#print-root .print-equipment>.sheet-weapons-panel{grid-column:1 / -1;grid-row:1}
+#print-root .print-equipment>.sheet-tools{grid-column:1;grid-row:2}
+#print-root .print-equipment>.sheet-objects{grid-column:2 / span 2;grid-row:2}
+#print-root .print-equipment>.sheet-silver{grid-column:4;grid-row:2}
+#print-root .sheet-silver-amount{font-size:12px;padding:6px}
+@media screen and (max-width:700px){.sheet-inventory{grid-template-columns:1fr}.sheet-inventory>.sheet-tools,.sheet-inventory>.sheet-objects,.sheet-inventory>.sheet-silver{grid-column:1;grid-row:auto}}
