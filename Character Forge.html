@@ -637,7 +637,7 @@ function personalLayout(){
  return `<div class="personal-layout"><div class="personal-top-main">${card('Identity','identity')}<div id="portrait-controls" class="no-print">${portraitEditor()}</div>${card('Appearance','appearance')}</div><div class="personal-top-side">${card('Attributes','attributes')}</div><div class="personal-bottom-main">${card('Unique Bond','bond')}${card('Alignment & Corruption','alignment')}</div><div class="personal-bottom-side">${card('Goals','goals')}${card('Corruption','corruption')}${card('Reputation','reputation')}</div></div>`;
 }
 function overview(){
- const v=current.values,c=calculate(v),value=k=>esc(v[k]||'—'),txt=k=>`<div class="sheet-text">${value(k)}</div>`,info=t=>`<div class="info-label">${esc(t)}</div>`;
+ const v=current.values,c=calculate(v),value=k=>esc(v[k]||'—'),txt=k=>`<div class="sheet-text">${['malignancies','scars','injuries'].includes(k)?esc(String(v[k]??'').trim()):value(k)}</div>`,info=t=>`<div class="info-label">${esc(t)}</div>`;
  const panel=(title,body,kind='')=>`<article class="sheet-panel ${kind}"><h3>${esc(title)}</h3>${body}${equipmentHint(({Tools:'tools','Small Objects':'objects',Supplies:'supplies',Weapons:'weapons'})[title])}</article>`;
  const rows=items=>`<table class="sheet-values"><tbody>${items.map(([label,val])=>`<tr><th scope="row">${esc(label)}</th><td>${esc(val)}</td></tr>`).join('')}</tbody></table>`;
  const parts=items=>`<details class="calculation-breakdown"><summary>Calculation breakdown</summary>${rows(items.map(p=>[p.label,p.value]))}</details>`;
