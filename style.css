@@ -413,3 +413,7 @@ nav .campaign-nav{border-left:1px solid #a18a5870;margin-left:12px;font-size:14p
 .gallery-mode header{grid-template-columns:1fr}.gallery-mode header .portrait-column{display:none}
 @media(max-width:500px){.gallery-grid{grid-template-columns:minmax(0,256px)}.campaign-create{align-items:stretch;flex-direction:column}.campaign-create label{width:100%}}
 .gallery-inline-rp{white-space:nowrap;color:var(--ink)}
+
+.about-page{max-width:900px}.about-intro{padding:4px 0 20px}.about-intro .eyebrow{color:var(--gold)}.about-intro h3{font:36px Georgia,serif;color:var(--accent);margin:6px 0 10px}.about-intro>p:last-child{color:var(--muted)}
+.about-card{border-color:var(--gold);background:var(--parchment);padding:22px 24px}.about-card h4{font:700 22px Georgia,serif;color:var(--accent);margin-bottom:12px}.about-card p{line-height:1.65;overflow-wrap:anywhere}.about-card a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}.about-card a:hover{color:#731b20}.about-card .muted{margin-bottom:0}
+.about-support{border-top:3px double var(--gold)}.about-card .coffee-link{display:inline-block;padding:11px 18px;background:var(--accent);border:1px solid #861c23;border-radius:3px;color:#fff7e9;text-decoration:none;font-weight:600}.about-card .coffee-link:hover{background:#831b21;color:#fff7e9}.about-card a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
