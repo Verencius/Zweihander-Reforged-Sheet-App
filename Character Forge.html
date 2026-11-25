@@ -558,17 +558,7 @@ function fieldHint(key){
  if(/^profession_.*_skill_/.test(key))return 'Matching Purchased checkbox grants one rank: +10%, capped at three ranks per skill.';
  if(/^profession_.*_bonus_/.test(key))return 'Matching Purchased checkbox adds +1 to the selected attribute bonus.';
  if(/^profession_.*_attribute$/.test(key))return 'Purchased adjustment adds +5% to the selected attribute and its skills.';
- if(key==='armor_qualities')return 'Keywords: Ruined sets armor DTh to 0; Maker\'s Mark adds 1 DTh; Ill-fitted gives −3 Initiative; Heavy blocks Spiritual Defense. Enter keywords in this field.';
- if(key==='armor_dth')return 'Added to Damage Threshold after armor qualities and Brawn Bonus requirement adjustments.';
- if(key==='armor_bb')return 'If unmet, reduces armor DTh by the shortfall (minimum 1). Ruined and Maker\'s Mark take precedence, as in the supplied sheet.';
- if(key==='armor_name')return 'A filled armor name or positive armor DTh counts as wearing armor for ancestral talents.';
- if(/^weapon_qualities_/.test(key))return 'Equipped only: Hardened adds +1 Peril Threshold; Defensive adds +1 Damage Threshold. Each bonus applies once. Ruined disables these benefits.';
- if(/^weapon_active_/.test(key))return 'Equip to enable Hardened / Defensive benefits. All named weapons count toward carrying limits.';
- if(/^weapon_name_/.test(key))return 'Every named weapon counts toward the carrying limit, equipped or otherwise.';
- if(/^tool_\d+$/.test(key))return 'Every filled tool slot counts toward carrying limits; excess items reduce Initiative.';
- if(/^object_\d+$/.test(key))return '“Talisman of [Skill]” adds +5% once. The supplied formulas omit this bonus for Thievery and Toughness.';
  if(key==='scars_number')return 'With purchased Spiritual Defense, each scar adds +1 Damage Threshold; Heavy armor blocks this bonus.';
- if(/^supply_rating_/.test(key))return 'Maximum Supply Rating uses Intelligence Bonus, or Combat Bonus with purchased Call to Arms. The limit appears on Overview.';
  if(key==='silver')return 'Each full 1,000 SP adds 1 burden and subtracts 1 Initiative, matching the supplied formula.';
  if(key==='burden_penalty')return 'Extra burden is subtracted from Initiative, in addition to carrying and silver penalties.';
  if(key==='peril_condition_track')return 'Peril track penalty is shown separately from the template skill total. Steam-powered gives +1/+2/+3 Initiative at −5/−10/−15.';
