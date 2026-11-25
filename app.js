@@ -96,8 +96,6 @@ function fitPrintPages(){document.querySelectorAll('#print-root .print-page').fo
  body.style.transform=`scale(${scale})`;});}
 function fieldHint(key){
  if(/_bonus_custom$/.test(key))return 'Adds directly to this attribute bonus, affecting any threshold, initiative or capacity that uses it.';
- if(/^profession_.*_skill_/.test(key))return 'Matching Purchased checkbox grants one rank: +10%, capped at three ranks per skill.';
- if(/^profession_.*_bonus_/.test(key))return 'Matching Purchased checkbox adds +1 to the selected attribute bonus.';
  if(/^profession_.*_attribute$/.test(key))return 'Purchased adjustment adds +5% to the selected attribute and its skills.';
  if(key==='scars_number')return 'With purchased Spiritual Defense, each scar adds +1 Damage Threshold; Heavy armor blocks this bonus.';
  if(key==='burden_penalty')return 'Extra burden is subtracted from Initiative, in addition to carrying and silver penalties.';
