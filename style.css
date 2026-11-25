@@ -541,3 +541,20 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .print-stress-track .print-track-square{order:2}
 /* Screen-only: keep Initiative on the right; the printed position is unchanged. */
 @media screen and (min-width:1201px){.sheet-combat>.sheet-skills-panel{grid-column:1;grid-row:1 / span 2}.sheet-combat>.sheet-peril{grid-column:2;grid-row:1}.sheet-combat>.sheet-damage{grid-column:3;grid-row:1}.sheet-combat>.sheet-initiative{grid-column:2 / span 2;grid-row:2}}
+
+/* Compact independent controls in the screen's right-hand combat area. */
+.sheet-session-controls{grid-column:2 / span 2;grid-row:2;display:grid;grid-template-columns:minmax(0,3fr) minmax(130px,1fr);gap:12px;align-items:stretch;min-width:0}
+.sheet-session-controls>.sheet-panel{min-width:0;width:100%}
+.sheet-session-controls .sheet-initiative .overview-controls{grid-template-columns:1fr;padding:8px}
+.sheet-session-controls .sheet-initiative .overview-controls label{display:grid;grid-template-columns:minmax(0,1fr) 100px;align-items:center;gap:8px}
+.sheet-session-controls .sheet-initiative .field-caption{grid-column:1;grid-row:1}
+.sheet-session-controls .sheet-initiative input{grid-column:2;grid-row:1;padding:6px}
+.sheet-session-controls .sheet-initiative .field-hint{grid-column:1 / -1;grid-row:2}
+.sheet-action-points{display:flex;flex-direction:column}
+.sheet-action-points>.overview-controls{flex:1;display:flex;align-items:center;padding:12px}
+.sheet-action-points label{width:100%}
+.sheet-action-points .field-caption{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.sheet-action-points input{font-size:30px;font-weight:600;text-align:center;padding:12px 4px;width:100%;height:auto}
+.sheet-action-points>h3{text-align:center}
+@media screen and (max-width:1200px){.sheet-combat>.sheet-session-controls{grid-column:1 / -1;grid-row:3}}
+@media screen and (max-width:500px){.sheet-session-controls{grid-template-columns:minmax(0,2fr) minmax(95px,1fr);gap:8px}.sheet-action-points>h3{font-size:12px}.sheet-session-controls .sheet-initiative .overview-controls label{grid-template-columns:1fr 60px}}
