@@ -554,7 +554,6 @@ function fitPrintPages(){document.querySelectorAll('#print-root .print-page').fo
  body.style.transform=`scale(${scale})`;});}
 function fieldHint(key){
  if(/_bonus_custom$/.test(key))return 'Adds directly to this attribute bonus, affecting any threshold, initiative or capacity that uses it.';
- if(/^profession_.*_attribute$/.test(key))return 'Purchased adjustment adds +5% to the selected attribute and its skills.';
  if(key==='scars_number')return 'With purchased Spiritual Defense, each scar adds +1 Damage Threshold; Heavy armor blocks this bonus.';
  if(key==='burden_penalty')return 'Extra burden is subtracted from Initiative, in addition to carrying and silver penalties.';
  if(key==='peril_condition_track')return 'Peril track penalty is shown separately from the template skill total. Steam-powered gives +1/+2/+3 Initiative at −5/−10/−15.';
