@@ -477,3 +477,8 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .sheet-silver>.info-label{max-width:92px;border-top:1px solid var(--line)}
 @media screen and (max-width:700px){.sheet-inventory{grid-template-columns:1fr}.sheet-inventory>.sheet-silver{justify-self:start}}
 .sheet-silver>.info-label,#print-root .sheet-silver>.info-label{contain:inline-size;max-width:none}
+/* Stretch the silver panel to its shared inventory row's height. */
+.sheet-inventory>.sheet-silver,#print-root .print-equipment>.sheet-silver{align-self:stretch;display:flex;flex-direction:column}
+.sheet-silver>.sheet-silver-amount{flex:1;display:flex;align-items:center;justify-content:center}
+.sheet-silver>.info-label{flex:0 0 auto;margin-top:auto}
+.sheet-inventory>.sheet-objects,#print-root .print-equipment>.sheet-objects{align-self:stretch}
