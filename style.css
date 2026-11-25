@@ -506,3 +506,11 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .sheet-skills .rank-marks{gap:3px;vertical-align:middle}
 #print-root .sheet-skills .rank-mark{display:inline-block;width:13px;height:13px;flex:0 0 13px;font-size:0;line-height:0;border:1.2px solid #292017;background:#faf7ef;box-sizing:border-box}
 #print-root .sheet-skills .rank-mark.is-filled{background:#a62229;box-shadow:inset 0 0 0 2px #faf7ef}
+
+#print-root .print-conditions-notes{border:1px solid #b3a077;background:#faf7ef;margin-top:2px}
+#print-root .print-conditions-notes h4{font:700 10px Georgia,serif;color:#8e282b;margin:0;padding:5px 6px;border-bottom:1px solid #c8b995}
+#print-root .print-conditions-lines{height:42px;margin:0 6px;background:repeating-linear-gradient(to bottom,transparent 0,transparent 19px,#c8b99580 19px,#c8b99580 20px)}
+#print-root .print-starving-row{display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:25px;padding:3px 0;font:700 11px Georgia,serif;color:#a62229}
+#print-root .sheet-attributes .rank-marks{gap:2px;vertical-align:middle}
+#print-root .sheet-attributes .rank-mark{display:inline-block;width:13px;height:13px;flex:0 0 13px;font-size:0;line-height:0;border:1.2px solid #292017;background:#faf7ef;box-sizing:border-box}
+#print-root .sheet-attributes .rank-mark.is-filled{background:#a62229;box-shadow:inset 0 0 0 2px #faf7ef}
