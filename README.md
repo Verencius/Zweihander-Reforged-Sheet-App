@@ -47,6 +47,4 @@ node run-tests.cjs
 
 The app itself has no runtime dependencies. Python and Node.js are needed only for development.
 
-## License
-
-GNU General Public License v3.0. See [LICENSE](LICENSE).
+The Tracking tab has been removed. Its eight combat/session controls remain editable on Overview. Corruption and permanent corruption are on Personal, silver and equipped weapons on Equipment, and reputation on Personal. No former Tracking field is lost.

@@ -46,7 +46,7 @@ try{const storedCampaigns=JSON.parse(localStorage.getItem('zweihander-forge-camp
 if(!characters.length)characters=[blank()];current=characters[0];
 function persist(){try{localStorage.setItem('zweihander-forge-campaigns-v1',JSON.stringify(campaigns));localStorage.setItem('zweihander-forge-v1',JSON.stringify(characters));$('status').textContent='Saved on this device';}catch{storage=false;$('status').textContent='Browser storage unavailable — use Save JSON to keep your character';}}
 function library(){ $('library').innerHTML=characters.map(c=>`<option value="${esc(c.id)}">${esc(c.values.name||'Unnamed survivor')}</option>`).join('');$('library').value=current.id;}
-const tabs=['Overview','Personal','Equipment','Magic','Advancement','Tracking','Gallery','Campaigns','About'];
+const tabs=['Overview','Personal','Equipment','Magic','Advancement','Gallery','Campaigns','About'];
 function group(s){if(s.tracking)return 'Tracking';if(/Profession|Reward Points|Custom Bonuses/.test(s.title))return 'Advancement';if(['Spells','Rituals'].includes(s.title))return 'Magic';if(['Armor','Weapons','Tools','Supplies','Small Objects','Wealth & Burden'].includes(s.title))return 'Equipment';return 'Personal';}
 function portraitSource(value){return typeof value==='string'&&/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+$/.test(value)?value:'';}
 function cropSquare(width,height){const side=Math.min(width,height);return {x:(width-side)/2,y:(height-side)/2,side};}
