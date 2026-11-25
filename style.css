@@ -468,3 +468,12 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .print-equipment>.sheet-silver{grid-column:4;grid-row:2}
 #print-root .sheet-silver-amount{font-size:12px;padding:6px}
 @media screen and (max-width:700px){.sheet-inventory{grid-template-columns:1fr}.sheet-inventory>.sheet-tools,.sheet-inventory>.sheet-objects,.sheet-inventory>.sheet-silver{grid-column:1;grid-row:auto}}
+.sheet-inventory{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) max-content}
+.sheet-inventory>.sheet-silver{width:min-content;min-width:max-content}
+.sheet-silver>h3{white-space:nowrap}
+.sheet-silver>.info-label{border-top:1px solid var(--line);max-width:150px;min-width:0;white-space:normal}
+#print-root .print-equipment{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) max-content}
+#print-root .print-equipment>.sheet-silver{width:min-content;min-width:max-content}
+#print-root .sheet-silver>.info-label{max-width:92px;border-top:1px solid var(--line)}
+@media screen and (max-width:700px){.sheet-inventory{grid-template-columns:1fr}.sheet-inventory>.sheet-silver{justify-self:start}}
+.sheet-silver>.info-label,#print-root .sheet-silver>.info-label{contain:inline-size;max-width:none}
