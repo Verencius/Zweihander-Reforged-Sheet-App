@@ -579,3 +579,5 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .print-initiative-values tr:last-child th,#print-root .print-initiative-values tr:last-child td{font-weight:700;border-bottom:0;background:#e6dbc45c}
 #print-root .print-action-writein{flex:1;min-height:17mm;display:flex;align-items:center;justify-content:center;padding:5mm}
 #print-root .print-action-writein>span{display:block;width:100%;height:8mm;border-bottom:1px solid #b3a077}
+/* Spell and ritual print tables have no background fills. */
+#print-root .magic-readonly-section,#print-root .magic-readonly-section>h3,#print-root .magic-readonly-grid,#print-root .magic-readonly-record,#print-root .magic-readonly-record h4,#print-root .magic-readonly-record dl,#print-root .magic-readonly-record dl>div{background:none;box-shadow:none}
