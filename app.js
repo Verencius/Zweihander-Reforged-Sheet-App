@@ -105,7 +105,7 @@ function printCombatPanel(markup){return markup.replace(/<label\b[^>]*>[\s\S]*?<
  }).replace(/<div class="info-label">Temporary condition penalty[^<]*<\/div>/g,'');}
 
 function printSessionPanels(){const c=calculate(current.values),modifier=Number(current.values.initiative_temporary)||0;
- return `<div class="print-session-controls"><article class="sheet-panel sheet-initiative print-initiative-compact"><h3>Initiative</h3><table class="print-initiative-values"><tbody><tr><th scope="row">Final Initiative</th><td>${c.initiative.total}</td></tr></tbody></table><p class="print-initiative-note">Applied modifier: ${modifier>0?'+':''}${modifier}</p></article></div>`;
+ return `<div class="print-session-controls"><article class="sheet-panel sheet-initiative print-initiative-compact"><h3>Initiative</h3><div class="print-initiative-total" aria-label="Initiative">${c.initiative.total}</div><p class="print-initiative-note">Applied modifier: ${modifier>0?'+':''}${modifier}</p></article></div>`;
 }
 function printMarkup(){const p=overviewParts,hasMagic=['spell','ritual'].some(k=>magicRecords(k).length>0),total=hasMagic?3:2;
  const page=(number,title,body)=>`<section class="print-page">${printOrnaments(number)}<div class="print-top-spacer"><div class="print-brand-title">ZWEIHÄNDER <span>REFORGED</span></div></div><div class="print-viewport"><div class="print-body">${body}${number===1?'<div class="print-spare-notes"><span>Chronicle & Session Notes</span></div>':''}</div></div><div class="print-running-foot"><span>${number} / ${total}</span></div></section>`;
