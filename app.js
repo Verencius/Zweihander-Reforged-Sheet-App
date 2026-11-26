@@ -78,8 +78,8 @@ function magicReadOnly(){return ['spell','ritual'].map(kind=>{const config=magic
 let overviewParts={};
 function professionPrintSummary(){const v=current.values,ledger=calculate(v),currentTier=TIERS.slice().reverse().find(t=>String(v[`profession_${t}_name`]||'').trim())||'basic',advances=[];
  for(let i=1;i<=6;i++)advances.push({label:'Skill Rank '+i,key:'skill_'+i,toggle:i});
- advances.push({label:'Primary Attribute Adjustment',key:'attribute',toggle:7},{label:'Professional Talent',key:'profession_talent',toggle:8},{label:'Ancestral Talent',key:'ancestral_talent',toggle:9});
- for(let i=1;i<=6;i++)advances.push({label:'Secondary Attribute Modifier '+i,key:'bonus_'+i,toggle:9+i});
+ advances.push({label:'Attribute Adjustment',key:'attribute',toggle:7},{label:'Professional Talent',key:'profession_talent',toggle:8},{label:'Ancestral Talent',key:'ancestral_talent',toggle:9});
+ for(let i=1;i<=6;i++)advances.push({label:'Attribute Modifier '+i,key:'bonus_'+i,toggle:9+i});
  for(let i=1;i<=3;i++)advances.push({label:'General Talent '+i,key:'talent_'+i,toggle:15+i});
  const cell=(advance,tier)=>{const p=`profession_${tier}_`,value=v[p+advance.key],purchased=[true,1,'1'].includes(v[p+'toggle_'+advance.toggle]),selected=value&&value!=='None'&&String(value).trim();
  if(!selected&&!purchased&&tier!==currentTier)return '<td></td>';
