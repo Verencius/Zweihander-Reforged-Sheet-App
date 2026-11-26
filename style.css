@@ -701,3 +701,8 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .print-equipment>.sheet-silver{grid-column:3;grid-row:2}
 #print-root .print-equipment>.sheet-objects{grid-column:1 / -1;grid-row:3}
 @media screen and (max-width:700px){.sheet-inventory{grid-template-columns:1fr}.sheet-inventory>.sheet-tools,.sheet-inventory>.sheet-supplies,.sheet-inventory>.sheet-silver,.sheet-inventory>.sheet-objects{grid-column:1;grid-row:auto}}
+/* Small Objects precedes the Tools / Supplies / Silver row. */
+@media screen and (min-width:701px){.sheet-inventory>.sheet-objects{grid-row:1}.sheet-inventory>.sheet-tools,.sheet-inventory>.sheet-supplies,.sheet-inventory>.sheet-silver{grid-row:2}}
+#print-root .print-equipment>.sheet-objects{grid-row:2}
+#print-root .print-equipment>.sheet-tools,#print-root .print-equipment>.sheet-supplies,#print-root .print-equipment>.sheet-silver{grid-row:3}
+@media screen and (max-width:700px){.sheet-inventory>.sheet-objects{grid-row:1}}
