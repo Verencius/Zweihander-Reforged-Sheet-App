@@ -581,3 +581,18 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .print-action-writein>span{display:block;width:100%;height:8mm;border-bottom:1px solid #b3a077}
 /* Spell and ritual print tables have no background fills. */
 #print-root .magic-readonly-section,#print-root .magic-readonly-section>h3,#print-root .magic-readonly-grid,#print-root .magic-readonly-record,#print-root .magic-readonly-record h4,#print-root .magic-readonly-record dl,#print-root .magic-readonly-record dl>div{background:none;box-shadow:none}
+
+/* One label column, followed by the three profession columns. */
+#print-root .print-profession-table{width:100%;border-collapse:collapse;table-layout:fixed;font:10px/1.35 system-ui,sans-serif}
+#print-root .print-profession-table .print-advance-label-col{width:26%}
+#print-root .print-profession-table th,#print-root .print-profession-table td{padding:4px 6px;border-right:1px solid #d5cbb6;border-bottom:1px solid #d5cbb6;text-align:left;vertical-align:middle;overflow-wrap:anywhere}
+#print-root .print-profession-table tr>:last-child{border-right:0}
+#print-root .print-profession-table thead th{background:#eee6d5;color:var(--accent);font-family:Georgia,serif;font-size:11px;font-weight:700;vertical-align:top}
+#print-root .print-profession-title{display:block;margin-bottom:3px}
+#print-root .print-profession-table tbody th{color:#211c18;font-weight:400}
+#print-root .print-profession-table tbody tr:nth-child(even){background:#dfd1b22e}
+#print-root .print-profession-table .print-advance-group>*{border-top:1px solid #b3a077}
+#print-root .print-advance-entry{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;align-items:center;color:var(--accent);font-weight:600}
+#print-root .print-purchase-mark{color:#292017;font-size:13px;font-weight:400;line-height:1;white-space:nowrap}
+#print-root .print-profession-table tfoot td{padding:0;border-bottom:0}
+#print-root .print-profession-table .print-rp-summary{border-top:0}
