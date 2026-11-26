@@ -611,3 +611,15 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .print-combat-row>.sheet-skills-panel{grid-column:2;grid-row:1}
 #print-root .print-combat-row>.sheet-damage{grid-column:3;grid-row:1 / span 2}
 #print-root .print-combat-row>.print-session-controls{grid-column:2;grid-row:2;grid-template-columns:minmax(0,1fr)}
+
+/* Fill the portrait sidebar down to the Languages panel. */
+.sheet-hero{align-items:stretch}
+.sheet-hero>.sheet-character-side{align-self:stretch}
+.sheet-character-side>.sheet-goals,.sheet-character-side>.sheet-reputation{flex:1 0 auto;display:flex;flex-direction:column}
+.sheet-character-side>.sheet-goals>.sheet-text,.sheet-character-side>.sheet-reputation>.sheet-text{flex:1;min-height:36px}
+.sheet-hero>.sheet-bio>.sheet-panel:last-child{margin-top:auto}
+#print-root .print-bio-row{align-items:stretch}
+#print-root .print-character-side{align-self:stretch}
+#print-root .print-character-side>.sheet-goals,#print-root .print-character-side>.sheet-reputation{flex:1 0 auto;display:flex;flex-direction:column}
+#print-root .print-character-side>.sheet-goals>.sheet-text,#print-root .print-character-side>.sheet-reputation>.sheet-text{flex:1;min-height:10mm}
+@media screen and (max-width:700px){.sheet-character-side>.sheet-goals>.sheet-text,.sheet-character-side>.sheet-reputation>.sheet-text{min-height:60px}}
