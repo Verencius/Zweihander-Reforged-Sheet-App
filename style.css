@@ -666,3 +666,9 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .print-combat-row>.print-damage-stack{grid-column:3;grid-row:1;min-width:0;display:flex;flex-direction:column;gap:5px}
 #print-root .print-initiative-note{font-size:8px;margin:3px 5px;color:var(--muted)}
 #print-root .print-combat-row>.print-peril-stack{grid-column:1;grid-row:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+/* Fill remaining combat-column height with ruled Conditions space. */
+#print-root .print-combat-row>.print-skills-stack{align-self:stretch}
+#print-root .print-skills-stack>.print-conditions-notes{flex:1;display:flex;flex-direction:column;min-height:85px}
+#print-root .print-skills-stack .print-conditions-lines{flex:1;height:auto;min-height:60px}
+#print-root .print-damage-stack>.print-session-controls{display:block;width:100%;min-width:0}
+#print-root .print-damage-stack .print-initiative-compact{width:100%;box-sizing:border-box}
