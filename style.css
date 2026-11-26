@@ -641,3 +641,8 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 @media screen and (min-width:701px) and (max-width:1200px){.sheet-combat>.sheet-peril-stack{grid-column:1;grid-row:2}.sheet-combat>.sheet-damage{grid-column:2;grid-row:2}}
 .initiative-final>output{justify-content:center;text-align:center}
 .initiative-input input{text-align:center}
+
+.initiative-final>span{text-align:center}
+.sheet-armor-values .sheet-values{table-layout:fixed}
+.sheet-armor-values .sheet-values th{width:48%}
+.sheet-armor-values .sheet-values td{width:52%;font-weight:400}
