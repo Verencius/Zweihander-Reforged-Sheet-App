@@ -597,3 +597,5 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .print-profession-table tfoot td{padding:0;border-bottom:0}
 #print-root .print-profession-table .print-rp-summary{border-top:0}
 #print-root .print-profession-table .print-advance-label-col{width:19%}
+#print-root .print-profession-table .print-profession-title{display:inline;margin:0}
+#print-root .print-profession-table thead .print-tier-cost{display:inline;white-space:nowrap;margin-left:5px}
