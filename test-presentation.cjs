@@ -8,3 +8,13 @@ vm.runInContext(`current.values.spells_count=2;current.values.magic_name_1='Ashe
 html=el('overview').innerHTML;assert(html.indexOf('sheet-talents')<html.indexOf('sheet-magic'));assert(html.indexOf('sheet-magic')<html.indexOf('sheet-ledger'));print=ctx.printMarkup();const pages=print.split('<section class="print-page">').slice(1);assert.equal(pages.length,3);assert(!pages[0].includes('Ashen Bolt'));assert(!pages[1].includes('Binding Circle'));assert(pages[2].includes('Ashen Bolt'));assert(pages[2].includes('Iron Skin'));assert(pages[2].includes('Binding Circle'));assert(pages[2].includes('Long ritual description '.repeat(500)));assert(!print.includes('undefined'));
 assert.equal(ctx.printScale(700,1400,700,980),.7);assert.equal(ctx.printScale(1400,700,700,980),.5);assert.equal(ctx.printScale(500,500,700,980),1);assert(Number.isFinite(ctx.printScale(0,0,700,980)));
 console.log('Passed: highest profession/fallback, permanent talent guide order, magic overview order, all magic content preserved, two core pages plus optional third page, and fit-to-page scale math.');
+
+el('print-advancement').checked=true;
+const withAdvancement=ctx.printMarkup().split('<section class="print-page">').slice(1);
+assert.equal(withAdvancement.length,4);
+assert(!withAdvancement[1].includes('Profession Advancement'));
+assert(withAdvancement[2].includes('Profession Advancement'));
+assert(withAdvancement[3].includes('Ashen Bolt'));
+el('print-advancement').checked=false;
+assert(!ctx.printMarkup().includes('Profession Advancement'));
+console.log('Passed: optional advancement prints on a separate page before magic.');
