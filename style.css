@@ -689,3 +689,15 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .print-brand-title span{display:block;margin-top:4px;font-size:11px;letter-spacing:6px;color:#806837}
 #print-root .print-running-foot{justify-content:flex-end}
 #print-root .print-initiative-total{font:700 26px/1.1 Georgia,serif;color:#a62229;text-align:center;padding:7px 4px 3px}
+/* Tools, Supplies and Silver share a row; Small Objects has its own row. */
+.sheet-inventory{grid-template-columns:minmax(0,1fr) minmax(0,1fr) max-content}
+.sheet-inventory>.sheet-tools{grid-column:1;grid-row:1}
+.sheet-inventory>.sheet-supplies{grid-column:2;grid-row:1}
+.sheet-inventory>.sheet-silver{grid-column:3;grid-row:1}
+.sheet-inventory>.sheet-objects{grid-column:1 / -1;grid-row:2}
+#print-root .print-equipment{grid-template-columns:minmax(0,1fr) minmax(0,1fr) max-content}
+#print-root .print-equipment>.sheet-tools{grid-column:1;grid-row:2}
+#print-root .print-equipment>.sheet-supplies{grid-column:2;grid-row:2}
+#print-root .print-equipment>.sheet-silver{grid-column:3;grid-row:2}
+#print-root .print-equipment>.sheet-objects{grid-column:1 / -1;grid-row:3}
+@media screen and (max-width:700px){.sheet-inventory{grid-template-columns:1fr}.sheet-inventory>.sheet-tools,.sheet-inventory>.sheet-supplies,.sheet-inventory>.sheet-silver,.sheet-inventory>.sheet-objects{grid-column:1;grid-row:auto}}
