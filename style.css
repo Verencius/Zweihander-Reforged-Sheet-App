@@ -646,3 +646,11 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 .sheet-armor-values .sheet-values{table-layout:fixed}
 .sheet-armor-values .sheet-values th{width:48%}
 .sheet-armor-values .sheet-values td{width:52%;font-weight:400}
+.initiative-input{justify-self:center;width:max-content;max-width:100%}
+.initiative-input>label{width:max-content;max-width:100%}
+.initiative-input input{width:100%;min-width:0;box-sizing:border-box}
+.initiative-input>label{display:grid;grid-template-columns:max-content}
+.initiative-input input{width:0;min-width:100%}
+.starving-control>label{display:flex;flex-direction:row;align-items:center;gap:6px;justify-content:flex-start}
+.starving-control input[type=checkbox]{order:-1;margin:0;width:auto}
+.condition-penalty{color:var(--accent);font-weight:600}
