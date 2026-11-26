@@ -658,3 +658,6 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 .other-conditions>label{display:flex;flex-direction:column;gap:4px}
 .other-conditions textarea{height:100px;min-height:100px;line-height:22px;padding:5px 7px;resize:vertical;background:repeating-linear-gradient(to bottom,transparent 0,transparent 21px,#b8ab8b66 21px,#b8ab8b66 22px);background-origin:content-box}
 #print-root .print-conditions-lines{white-space:pre-wrap}
+/* Give the printed Damage track enough width for its full heading. */
+#print-root .print-combat-row{grid-template-columns:minmax(0,1fr) minmax(0,1.8fr) minmax(0,1.2fr)}
+#print-root .print-damage-track h4{white-space:nowrap;font-size:10px;letter-spacing:0}
