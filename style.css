@@ -692,3 +692,6 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .sheet-portrait img{border:3px double #ac9463;border-radius:0;padding:2px;background:#f7f2e6}
 /* Keep the requested ink-only magic tables clear of header fills. */
 #print-root .magic-readonly-section,#print-root .magic-readonly-section>h3{background:none}
+/* Florentine foliage around the folio, drawn as original vector ornaments. */
+#print-root .print-ornaments{color:#b18b4e}
+#print-root .sheet-panel>h3::after{content:'❧';color:#a37b3f}
