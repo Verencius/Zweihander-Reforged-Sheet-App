@@ -681,17 +681,6 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .print-stress-track{background:#faf7ef;box-sizing:border-box;width:100%}
 #print-root .print-purchase-mark{display:inline-block;width:13px;height:13px;flex:0 0 13px;font-size:0;line-height:0;border:1.2px solid #292017;background:#faf7ef;box-sizing:border-box}
 #print-root .print-purchase-mark[aria-label="Purchased"]{background:#a62229;box-shadow:inset 0 0 0 2px #faf7ef}
-/* Renaissance folio rules: paired gold lines and restrained printer's flowers. */
-#print-root .sheet-panel,#print-root .sheet-story{border:3px double #ac9463;border-radius:0;box-shadow:none}
-#print-root .sheet-panel>h3{border-bottom:1px solid #ac9463;background:linear-gradient(90deg,#e7dbc1,#f4eddd 55%,#e7dbc1);font-family:Georgia,serif;letter-spacing:.45px}
-#print-root .sheet-panel>h3::after{content:'❧';font-family:Georgia,serif;font-size:13px;line-height:13px;color:#927642}
-#print-root .print-condition-track{border:3px double #ac9463}
-#print-root .print-condition-track h4{border-bottom:3px double #b3a077}
-#print-root .print-conditions-notes{border:3px double #ac9463}
-#print-root .print-conditions-notes h4{border-bottom:1px solid #ac9463;background:#eee4cf;font-family:Georgia,serif}
-#print-root .sheet-portrait img{border:3px double #ac9463;border-radius:0;padding:2px;background:#f7f2e6}
-/* Keep the requested ink-only magic tables clear of header fills. */
-#print-root .magic-readonly-section,#print-root .magic-readonly-section>h3{background:none}
-/* Florentine foliage around the folio, drawn as original vector ornaments. */
-#print-root .print-ornaments{color:#b18b4e}
-#print-root .sheet-panel>h3::after{content:'❧';color:#a37b3f}
+
+/* Keep original vector artwork safely inside the printable page. */
+#print-root .print-ornaments{inset:2mm;width:calc(100% - 4mm);height:calc(100% - 4mm)}
