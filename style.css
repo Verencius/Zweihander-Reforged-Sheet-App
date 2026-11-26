@@ -684,3 +684,17 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 
 /* Keep original vector artwork safely inside the printable page. */
 #print-root .print-ornaments{inset:2mm;width:calc(100% - 4mm);height:calc(100% - 4mm)}
+/* Optional low-ink export, retaining all sheet values and writing boxes. */
+body.printer-friendly #print-root .print-page{background:#fff;color:#000}
+body.printer-friendly #print-root .print-ornaments{display:none!important}
+body.printer-friendly #print-root *{color:#000!important;text-shadow:none!important;box-shadow:none!important}
+body.printer-friendly #print-root .sheet-panel,body.printer-friendly #print-root .sheet-story,body.printer-friendly #print-root .print-condition-track,body.printer-friendly #print-root .print-conditions-notes{background:#fff;border:1px solid #555;border-radius:0}
+body.printer-friendly #print-root h3,body.printer-friendly #print-root h4,body.printer-friendly #print-root th,body.printer-friendly #print-root td,body.printer-friendly #print-root tr,body.printer-friendly #print-root .sheet-subheading,body.printer-friendly #print-root .sheet-objects-list>div{background:transparent!important;border-color:#aaa}
+body.printer-friendly #print-root h3::after,body.printer-friendly #print-root .print-condition-track::before,body.printer-friendly #print-root .print-condition-track::after{display:none}
+body.printer-friendly #print-root .print-track-square,body.printer-friendly #print-root .rank-mark,body.printer-friendly #print-root .print-purchase-mark,body.printer-friendly #print-root .corruption-square{background:#fff!important;border-color:#000}
+body.printer-friendly #print-root .rank-mark.is-filled,body.printer-friendly #print-root .print-purchase-mark[aria-label="Purchased"],body.printer-friendly #print-root .corruption-square.is-filled{background:#000!important;box-shadow:inset 0 0 0 2px #fff!important}
+body.printer-friendly #print-root .print-stage-dot{background:#000!important}
+body.printer-friendly #print-root .print-conditions-lines{background:repeating-linear-gradient(to bottom,transparent 0,transparent 19px,#ccc 19px,#ccc 20px)}
+body.printer-friendly #print-root .sheet-portrait img{filter:grayscale(1);border-color:#555;background:#fff}
+
+body.printer-friendly #print-root .corruption-summary,body.printer-friendly #print-root .corruption-track,body.printer-friendly #print-root .print-track-label{background:transparent!important}

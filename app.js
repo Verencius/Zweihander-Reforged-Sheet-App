@@ -304,5 +304,6 @@ let printing=false,originalDocumentTitle;function preparePrint(){if(printing){fi
  // Duplicate editor IDs never enter the printed sheet.
  root.querySelectorAll('[id]').forEach(node=>{if(node.namespaceURI!=='http://www.w3.org/2000/svg')node.removeAttribute('id');});
  printing=true;document.body.classList.add('printing');fitPrintPages();}
-window.addEventListener('beforeprint',preparePrint);window.addEventListener('afterprint',()=>{printing=false;if(originalDocumentTitle!==undefined){document.title=originalDocumentTitle;originalDocumentTitle=undefined;}document.body.classList.remove('printing');$('print-root').innerHTML='';});$('print').onclick=()=>{preparePrint();requestAnimationFrame(()=>{fitPrintPages();window.print();});};
+window.addEventListener('beforeprint',preparePrint);window.addEventListener('afterprint',()=>{printing=false;if(originalDocumentTitle!==undefined){document.title=originalDocumentTitle;originalDocumentTitle=undefined;}document.body.classList.remove('printing');document.body.classList.remove('printer-friendly');$('print-root').innerHTML='';});function printSheet(friendly=false){document.body.classList[friendly?'add':'remove']('printer-friendly');preparePrint();requestAnimationFrame(()=>{fitPrintPages();window.print();});}
+$('print').onclick=()=>printSheet();$('print-friendly').onclick=()=>printSheet(true);
 render();if(!storage)$('status').textContent='Use Save JSON for a durable backup';else $('status').textContent='Autosave enabled · export JSON for a portable backup';
