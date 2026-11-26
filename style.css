@@ -605,3 +605,9 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .print-combat-row>.sheet-damage{grid-column:2;grid-row:1 / span 2}
 #print-root .print-combat-row>.sheet-skills-panel{grid-column:3;grid-row:1}
 #print-root .print-combat-row>.print-session-controls{grid-column:3;grid-row:2}
+/* Printed combat order: Peril | Attributes & Skills | Damage. */
+#print-root .print-combat-row{grid-template-columns:minmax(0,1fr) minmax(0,2fr) minmax(0,1fr)}
+#print-root .print-combat-row>.sheet-peril{grid-column:1;grid-row:1 / span 2}
+#print-root .print-combat-row>.sheet-skills-panel{grid-column:2;grid-row:1}
+#print-root .print-combat-row>.sheet-damage{grid-column:3;grid-row:1 / span 2}
+#print-root .print-combat-row>.print-session-controls{grid-column:2;grid-row:2;grid-template-columns:minmax(0,1fr)}
