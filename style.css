@@ -708,3 +708,18 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 @media screen and (max-width:700px){.sheet-inventory>.sheet-objects{grid-row:1}}
 .print-advancement-option{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
 .print-advancement-option input{width:15px;height:15px;margin:0;accent-color:var(--accent)}
+/* Compact inventory: objects and burden together, then tools/supplies/coins. */
+@media screen and (min-width:701px){
+.equipment-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(180px,.8fr);grid-template-areas:"armor armor armor" "weapons weapons weapons" "objects objects burden" "tools supplies silver";gap:12px;align-items:start}
+.equipment-burden-fields{grid-template-columns:minmax(0,1fr);gap:8px}
+.equipment-burden textarea{min-height:138px}
+.sheet-inventory{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(160px,.65fr)}
+.sheet-inventory:has(>.sheet-burden)>.sheet-objects{grid-column:1 / span 2;grid-row:1}
+.sheet-inventory>.sheet-burden{grid-column:3;grid-row:1;align-self:stretch}
+.sheet-inventory>.sheet-silver{width:100%;min-width:0}
+}
+@media screen and (max-width:700px){.equipment-layout{grid-template-areas:"armor" "weapons" "objects" "burden" "tools" "supplies" "silver"}.sheet-inventory>.sheet-burden{grid-column:1;grid-row:2}}
+#print-root .print-equipment{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.65fr)}
+#print-root .print-equipment:has(>.sheet-burden)>.sheet-objects{grid-column:1 / span 2;grid-row:2}
+#print-root .print-equipment>.sheet-burden{grid-column:3;grid-row:2;align-self:stretch}
+#print-root .print-equipment>.sheet-silver{width:100%;min-width:0}
