@@ -119,7 +119,6 @@ function fieldHint(key){
  if(key==='scars_number')return 'With purchased Spiritual Defense, each scar adds +1 Damage Threshold; Heavy armor blocks this bonus.';
  if(key==='burden_penalty')return 'Extra burden is subtracted from Initiative, in addition to carrying and silver penalties.';
  if(key==='peril_condition_track')return 'Peril track penalty is shown separately from the template skill total. Steam-powered gives +1/+2/+3 Initiative at −5/−10/−15.';
- if(key==='peril_stress')return 'Stressed / Frightened / Terrified: −2/−4/−6 inflicted damage and peril. Disables Servant of the Steward; enables Supernatural Paranoia.';
  if(key==='damage_condition_track')return 'Seriously / Grievously Wounded or Dying enables Warg-blooded’s +3 Damage Threshold.';
  if(key==='peril_situational')return 'Adds directly to final Peril Threshold.';
  if(key==='damage_situational')return 'Adds directly to final Damage Threshold.';
@@ -128,7 +127,7 @@ function fieldHint(key){
  if(key==='reward_unique')return 'Each unique advance costs 10 RP.';
  return '';
 }
-function field(f){if(f.key==='corruption')f={...f,label:'Temporary Corruption',max:Math.max(0,9-(Number(current.values.corruption_permanent)||0))};if(f.key==='imageid')return '';const v=current.values[f.key]??'',id='field-'+f.key+'-'+Math.random().toString(36).slice(2);let control;const common=`id="${id}" data-key="${esc(f.key)}" ${current.locked?'disabled':''} ${fieldHint(f.key)?`aria-describedby="${id}-hint" title="${esc(fieldHint(f.key))}"`:''}`;
+function field(f){if(f.key==='peril_stress')f={...f,label:'Temporary Conditions'};if(f.key==='corruption')f={...f,label:'Temporary Corruption',max:Math.max(0,9-(Number(current.values.corruption_permanent)||0))};if(f.key==='imageid')return '';const v=current.values[f.key]??'',id='field-'+f.key+'-'+Math.random().toString(36).slice(2);let control;const common=`id="${id}" data-key="${esc(f.key)}" ${current.locked?'disabled':''} ${fieldHint(f.key)?`aria-describedby="${id}-hint" title="${esc(fieldHint(f.key))}"`:''}`;
  if(f.type==='select')control=`<select ${common}>${f.options.map(o=>`<option value="${esc(o.value)}" ${v===o.value?'selected':''}>${esc(o.label)}</option>`).join('')}</select>`;
  else if(f.type==='textarea')control=`<textarea ${common}>${esc(v)}</textarea>`;
  else control=`<input ${common} type="${esc(f.type==='checkbox'?'checkbox':f.type==='number'?'number':'text')}" ${f.type==='checkbox'?(v===true||v===1||v==='1'?'checked':''):`value="${esc(v)}"`} ${['min','max','placeholder'].filter(k=>f[k]!=null).map(k=>`${k}="${esc(f[k])}"`).join(' ')}>`;
