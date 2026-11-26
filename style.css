@@ -654,3 +654,7 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 .starving-control>label{display:flex;flex-direction:row;align-items:center;gap:6px;justify-content:flex-start}
 .starving-control input[type=checkbox]{order:-1;margin:0;width:auto}
 .condition-penalty{color:var(--accent);font-weight:600}
+.other-conditions{grid-column:1 / -1;min-width:0}
+.other-conditions>label{display:flex;flex-direction:column;gap:4px}
+.other-conditions textarea{height:100px;min-height:100px;line-height:22px;padding:5px 7px;resize:vertical;background:repeating-linear-gradient(to bottom,transparent 0,transparent 21px,#b8ab8b66 21px,#b8ab8b66 22px);background-origin:content-box}
+#print-root .print-conditions-lines{white-space:pre-wrap}
