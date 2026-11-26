@@ -684,3 +684,7 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 
 /* Keep original vector artwork safely inside the printable page. */
 #print-root .print-ornaments{inset:2mm;width:calc(100% - 4mm);height:calc(100% - 4mm)}
+#print-root .print-top-spacer{display:flex;align-items:center;justify-content:center;box-sizing:border-box;padding:1mm 0 2mm}
+#print-root .print-brand-title{font:700 24px/1 Georgia,'Times New Roman',serif;letter-spacing:3px;color:#98272c;text-align:center;text-shadow:none}
+#print-root .print-brand-title span{display:block;margin-top:4px;font-size:11px;letter-spacing:6px;color:#806837}
+#print-root .print-running-foot{justify-content:flex-end}
