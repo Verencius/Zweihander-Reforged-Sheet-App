@@ -826,3 +826,11 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .sheet-burden>.burden-table td{height:22px;line-height:14px;padding:4px 3px;box-sizing:border-box}
 #print-root .print-objects-filler{flex:1;min-height:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 21px,#d5cbb6 21px,#d5cbb6 22px)}
 #print-root .sheet-burden>.print-objects-silver{flex:0 0 auto;margin-top:0}
+/* One shared line pitch for real and decorative printed Object rows. */
+#print-root .sheet-burden{--object-line-height:22px}
+#print-root .sheet-burden>.burden-table{display:block;border-collapse:separate;border-spacing:0}
+#print-root .sheet-burden>.burden-table tbody{display:block}
+#print-root .sheet-burden>.burden-table tr{display:grid;grid-template-columns:minmax(0,1fr) 42px;height:var(--object-line-height)}
+#print-root .sheet-burden>.burden-table td{display:block;width:auto;height:var(--object-line-height);min-height:0;padding:0 3px;line-height:var(--object-line-height);border:0;border-bottom:1px solid #d5cbb6;box-sizing:border-box;white-space:nowrap;overflow:hidden}
+#print-root .sheet-burden>.burden-table td:last-child{width:auto}
+#print-root .print-objects-filler{background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--object-line-height) - 1px),#d5cbb6 calc(var(--object-line-height) - 1px),#d5cbb6 var(--object-line-height))}
