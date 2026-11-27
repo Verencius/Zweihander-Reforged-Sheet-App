@@ -945,3 +945,11 @@ aside .app-brand-subtitle{font:500 15px/1.3 system-ui,sans-serif;letter-spacing:
 .tracker-card .tracker-day{width:13px;height:13px;aspect-ratio:auto;line-height:0}
 .tracker-card .tracker-day input[type=checkbox]{width:13px;height:13px;min-height:0;padding:0;border:1.2px solid #292017;background:#faf7ef;box-sizing:border-box}
 .tracker-card .tracker-day input[type=checkbox]:checked{background:#a62229;box-shadow:inset 0 0 0 2px #faf7ef}
+/* Compact controls and a full-width, single-row day track. */
+.tracker-cards{grid-template-columns:minmax(0,1fr)}
+.tracker-card{min-width:0}
+.tracker-fields{grid-template-columns:minmax(100px,130px) minmax(120px,1fr) minmax(85px,105px) minmax(85px,105px);gap:10px;margin-bottom:10px;overflow-x:auto}
+.tracker-fields label{font-size:12px;white-space:nowrap}
+.tracker-fields input,.tracker-fields select{height:32px;padding:4px 7px;margin-top:4px;font-size:13px}
+.tracker-card .tracker-days{display:grid;grid-template-columns:repeat(var(--tracker-day-count),minmax(13px,1fr));gap:3px;width:100%;overflow-x:auto;padding:2px 0 5px}
+.tracker-card .tracker-day{justify-self:center}
