@@ -862,3 +862,9 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 .personal-alignment .personal-fields>label{grid-column:1 / -1!important}
 .personal-top-side .personal-scars .personal-fields{grid-template-columns:minmax(0,1fr)}
 @media screen and (min-width:701px){.personal-layout>.personal-top-main,.personal-layout>.personal-top-side{grid-row:1}}
+.corruption-heading-row{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;background:#e8dfcc;border-bottom:1px solid var(--gold);padding:4px 8px}
+.corruption-heading-row>h3{margin:0;padding:0;border:0;font-size:14px;color:var(--accent);text-transform:uppercase}
+.corruption-heading-row>.corruption-summary{margin:0;padding:0;border:0;background:none;min-width:0}
+#print-root .corruption-heading-row{padding:3px 5px;gap:4px}
+#print-root .corruption-heading-row>h3{font:700 10px/1.3 Georgia,serif;letter-spacing:.2px}
+#print-root .corruption-heading-row>.corruption-summary{flex:0 1 auto}
