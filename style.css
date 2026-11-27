@@ -803,3 +803,4 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .print-skills-stack>.print-conditions-notes{margin-bottom:0;margin-top:0}
 #print-root .print-conditions-notes>h3{font:700 10px/1.2 Georgia,serif;padding:4px 5px;text-transform:uppercase;letter-spacing:.35px}
 #print-root .print-conditions-notes>h3::after{display:none}
+#print-root .print-peril-stack>.sheet-peril>.print-stress-track{margin-top:5px}
