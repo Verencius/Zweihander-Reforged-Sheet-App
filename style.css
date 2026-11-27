@@ -752,3 +752,7 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .corruption-track-end strong{text-transform:uppercase}
 #print-root .sheet-reputation>.info-label{color:#382d22;font-weight:600}
 #overview .sheet-peril .sheet-values td,#overview .sheet-damage .sheet-values td{text-align:center}
+.supply-rating-heading,.equipment-supplies thead th:last-child{white-space:nowrap}
+.supply-rating-heading>span,.supply-rating-max{display:inline}
+.sheet-burden{display:flex;flex-direction:column}
+.sheet-burden>.info-label{margin-top:auto}
