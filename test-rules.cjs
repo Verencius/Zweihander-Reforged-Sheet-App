@@ -22,3 +22,7 @@ const expectedBases={Athletics:'Brawn',Awareness:'Perception',Blackpowder:'Comba
 v={attribute_brawn:31,attribute_perception:32,attribute_combat:33,attribute_agility:34,attribute_willpower:35,attribute_fellowship:36,attribute_intelligence:37};
 for(const [skill,attribute] of Object.entries(expectedBases)){const result=calc(v).skills[skill];assert.equal(result.attribute,attribute);assert.equal(result.total,v['attribute_'+attribute.toLowerCase()]);const withTalismans={...v,object_2:'Talisman of '+skill,object_3:'Talisman of '+skill};assert.equal(calc(withTalismans).skills[skill].total,result.total+5);}
 console.log('Passed: all 21 requested skill bases and non-stacking talismans for every skill.');
+
+v={attribute_perception:40,burden:'Legacy pack',burden_penalty:2};assert.equal(calc(v).initiative.total,5);
+v={...v,burden_object_1:'Pack',burden_penalty_1:1,burden_object_2:'Chest',burden_penalty_2:3,burden_penalty_6:2};assert.equal(calc(v).initiative.burden,6);assert.equal(calc(v).initiative.total,1);assert.equal(calc(v).initiative.parts.find(p=>p.label==='Extra burden').value,-6);
+console.log('Passed: six-row burden penalties sum once and legacy burden remains supported.');

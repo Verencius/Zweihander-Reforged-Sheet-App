@@ -770,3 +770,15 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 .sheet-weapons th:first-child,.sheet-weapons td:first-child{width:28px;text-align:center;vertical-align:middle}
 #print-root .sheet-weapons th:first-child,#print-root .sheet-weapons td:first-child{width:20px;text-align:center;vertical-align:middle}
 #print-root .print-initiative-breakdown .print-initiative-total{text-align:center;justify-self:stretch}
+.burden-heading-penalty{float:right;text-transform:uppercase;font:inherit}
+.sheet-burden>h3::after{display:none!important}
+.burden-table{width:100%;border-collapse:collapse;table-layout:fixed}
+.burden-table td{height:32px;padding:4px 7px;border-bottom:1px solid #d5cbb6;vertical-align:middle;overflow-wrap:anywhere}
+.burden-table td:last-child{width:70px;text-align:center}
+.burden-table label{display:block}
+.burden-table .field-caption{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.burden-table input{width:100%;min-width:0;box-sizing:border-box}
+.burden-table input[type=number]{text-align:center}
+#print-root .burden-table{font-size:10px}
+#print-root .burden-table td{height:22px;padding:4px 3px;line-height:14px;box-sizing:border-box}
+#print-root .burden-table td:last-child{width:42px}
