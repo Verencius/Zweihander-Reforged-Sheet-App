@@ -723,3 +723,6 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .print-equipment:has(>.sheet-burden)>.sheet-objects{grid-column:1 / span 2;grid-row:2}
 #print-root .print-equipment>.sheet-burden{grid-column:3;grid-row:2;align-self:stretch}
 #print-root .print-equipment>.sheet-silver{width:100%;min-width:0}
+/* Blank supply slots retain the same writing height as populated rows. */
+#print-root .sheet-supplies .sheet-values tr{height:22px}
+#print-root .sheet-supplies .sheet-values th,#print-root .sheet-supplies .sheet-values td{height:22px;box-sizing:border-box;vertical-align:middle;padding:4px 3px;line-height:14px}
