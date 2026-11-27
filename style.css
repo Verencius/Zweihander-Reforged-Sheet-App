@@ -736,3 +736,19 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #overview .sheet-attributes .rank-marks{gap:2px;vertical-align:middle;letter-spacing:0}
 #overview .sheet-attributes .rank-mark{display:inline-block;width:13px;height:13px;flex:0 0 13px;font-size:0;line-height:0;border:1.2px solid #292017;background:#faf7ef;box-sizing:border-box}
 #overview .sheet-attributes .rank-mark.is-filled{background:#a62229;box-shadow:inset 0 0 0 2px #faf7ef}
+#overview .sheet-skills .rank-marks{gap:3px;vertical-align:middle;letter-spacing:0}
+#overview .sheet-skills .rank-mark{display:inline-block;width:13px;height:13px;flex:0 0 13px;font-size:0;line-height:0;border:1.2px solid #292017;background:#faf7ef;box-sizing:border-box}
+#overview .sheet-skills .rank-mark.is-filled{background:#a62229;box-shadow:inset 0 0 0 2px #faf7ef}
+.other-conditions .field-caption{font-size:14px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.3px}
+.sheet-supplies .sheet-values td,.sheet-supplies .supply-rating-heading{text-align:center}
+.sheet-supplies .sheet-values th:first-child{width:75%}
+.supply-rating-heading>span,.supply-rating-max{display:block;color:var(--accent);font-weight:700;white-space:nowrap}
+.memento-note{color:var(--accent);font-weight:600}
+.print-carry-limit{display:none}
+#print-root .print-carry-limit{display:block;float:right;color:var(--accent);font:700 9px/15px system-ui,sans-serif;letter-spacing:0}
+#print-root .sheet-tools>h3::after,#print-root .sheet-weapons-panel>h3::after{display:none}
+#print-root .sheet-tools>.table-hint,#print-root .sheet-weapons-panel>.table-hint,#print-root .talisman-note{display:none}
+#print-root .corruption-track-end strong,#print-root .corruption-permanent-count{font-size:10px;font-weight:700;color:#8f2329}
+#print-root .corruption-track-end strong{text-transform:uppercase}
+#print-root .sheet-reputation>.info-label{color:#382d22;font-weight:600}
+#overview .sheet-peril .sheet-values td,#overview .sheet-damage .sheet-values td{text-align:center}
