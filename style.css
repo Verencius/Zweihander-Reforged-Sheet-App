@@ -902,3 +902,4 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 .sheet-skills .current-skill{display:inline;font-size:inherit;white-space:nowrap}
 #print-root .print-peril-track .print-track-label strong,#print-root .print-peril-track .print-track-label small{display:inline;vertical-align:baseline}
 #print-root .print-peril-track .print-track-label small{margin:0 0 0 4px}
+.print-options{display:flex;flex-direction:column;justify-content:center;gap:5px}
