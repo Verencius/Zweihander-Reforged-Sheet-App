@@ -903,3 +903,5 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .print-peril-track .print-track-label strong,#print-root .print-peril-track .print-track-label small{display:inline;vertical-align:baseline}
 #print-root .print-peril-track .print-track-label small{margin:0 0 0 4px}
 .print-options{display:flex;flex-direction:column;justify-content:center;gap:5px}
+.update-actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.update-status{padding:10px 12px;border-left:3px solid var(--gold);background:#e7dfce55}

@@ -54,3 +54,9 @@ The Tracking tab has been removed. Its eight combat/session controls remain edit
 In Gallery, choose **Export full backup** to download `Zweihander - Full Backup.json`. It contains every character and its embedded portrait, gallery data, campaigns, assignments, lock states and the active character ID. Images are included as data URLs; no separate image folder is needed.
 
 Use **Restore backup** in Gallery to load this format (up to 50 MB). Restore validates the complete file, asks for confirmation, and adds its characters alongside the existing library. Character IDs are remapped to avoid collisions, matching campaign names are reused, and existing characters—including locked characters—are not overwritten. Importing the same backup repeatedly adds additional copies of its characters. Keep the downloaded backup independently of browser storage.
+
+### App versions and updates
+
+About shows the installed version and offers an on-demand GitHub update check. When a newer version is available, Download update verifies the standalone HTML file against the SHA-256 value in version.json. Export a full backup, close the app, replace the existing Character Forge.html in the same folder, and reopen it.
+
+For a new release, increment APP_RELEASE.version in app.js and set its date, then run python package_app.py. Commit app.js, the rebuilt Character Forge.html, and the generated version.json together. The version manifest and standalone HTML must come from the same build.
