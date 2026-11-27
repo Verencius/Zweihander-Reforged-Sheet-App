@@ -164,10 +164,10 @@ function magicSection(kind,printing=false){const c=magicConfig(kind),count=magic
 }
 function section(s,printing=false){if(s.title==='Spells'||s.title==='Rituals')return magicSection(s.title==='Spells'?'spell':'ritual',printing);const layout=advancement(s);if(layout)return layout;return `<article class="card"><h3>${esc(s.title)}</h3><div class="fields">${s.fields.map(field).join('')}</div></article>`;}
 function equipmentHint(kind,values=current.values){const c=calculate(values),hints={
- tools:`Carrying limit: ${c.toolsLimit} tools. Extra tools add burden and reduce Initiative.`,
+ tools:'',
  objects:'Use “Talisman of [Skill]” for +5% once per skill. Holding your memento ignores Peril Track penalties in a related Brush With Death scene.',
  supplies:`Maximum supply rating: ${c.supplyMax}. Uses final Intelligence Bonus (IB), including adjustments and advancements.`,
- weapons:`Carrying limit: ${c.weaponsLimit} weapons. Equip to apply Hardened (+1 Peril Threshold) or Defensive (+1 Damage Threshold); Ruined cancels these benefits.`,
+ weapons:`Equip to apply Hardened (+1 Peril Threshold) or Defensive (+1 Damage Threshold); Ruined cancels these benefits.`,
  armor:"DTh adds to Damage Threshold; check the Brawn Bonus requirement. Keywords: Heavy (blocks Spiritual Defense), Ill-fitted (−3 Initiative), Maker's Mark (+1 DTh), Ruined (0 DTh)."
  };if(kind==='supplies')return '';if(kind==='objects')return '<p class="table-hint info-label"><span class="talisman-note">Use “Talisman of [Skill]” for +5% once per skill. </span><span class="memento-note">Holding your memento ignores Peril Track penalties in a related Brush With Death scene.</span></p>';return hints[kind]?`<p class="table-hint info-label">${esc(hints[kind])}${kind==='weapons'&&c.stressPenalty?` <span class="condition-penalty">Temporary condition penalty (${esc(values.peril_stress)})</span>`:''}</p>`:'';}
 function equipmentLayout(){
