@@ -114,11 +114,18 @@ function printMarkup(){const p=overviewParts,hasMagic=['spell','ritual'].some(k=
  return page(1,'Character & Combat',`<div class="print-bio-row"><div>${p.bio}</div><div class="print-character-side">${p.portrait}${p.goals}${p.reputation}</div></div><div class="print-combat-row"><div class="print-skills-stack">${p.skills.replace(/<div class="info-label">Success includes[^<]*<\/div>/g,'')}<div class="sheet-panel print-conditions-notes"><h3>Conditions</h3><div class="print-conditions-lines">${esc([[true,1,'1'].includes(current.values.starving)?'Starving':'',current.values.other_conditions||''].filter(Boolean).join('\n'))}</div></div></div><div class="print-peril-stack">${printCombatPanel(p.peril).replace(/<\/article>$/,printConditionTrack('stress')+'</article>')}</div><div class="print-damage-stack">${printCombatPanel(p.damage).replace(/<p class="table-hint info-label">DTh adds[^<]*<\/p>/g,'')}${printSessionPanels()}</div></div>`)+page(2,'Equipment & Talents',`<div class="print-equipment">${p.weapons}${p.printTools}${p.objects}${p.printSupplies}${p.titles}${p.burden.replace(/<\/article>$/,`<div class="print-objects-filler" aria-hidden="true"></div><div class="print-objects-silver"><strong>Silver</strong><span>${Number(current.values.silver)||0}</span></div></article>`)}</div>${p.talents}`)+(includeAdvancement?page(3,'Advancement',professionPrintSummary()):'')+(hasMagic?page(includeAdvancement?4:3,'Spells & Rituals',p.magic):'');
 }
 function printScale(width,height,availableWidth,availableHeight){return Math.min(1,availableWidth/Math.max(1,width),availableHeight/Math.max(1,height));}
-function fitPrintPages(){document.querySelectorAll('#print-root .print-page').forEach(page=>{const viewport=page.querySelector('.print-viewport'),body=page.querySelector('.print-body'),notes=page.querySelector('.print-spare-notes'),width=viewport.clientWidth,height=viewport.clientHeight;body.style.transform='none';body.style.marginLeft='0';if(notes)notes.style.display='none';
+function printBlankRowCount(space,rowHeight){return rowHeight>0?Math.max(0,Math.floor((space+.01)/rowHeight)):0;}
+function fillPrintObjectRows(body,reset=false){const panel=body.querySelector?.('.sheet-burden');if(!panel)return;
+ const tbody=panel.querySelector('.burden-table tbody'),filler=panel.querySelector('.print-objects-filler');if(!tbody||!filler)return;
+ if(reset){tbody.querySelectorAll('.print-object-blank').forEach(row=>row.remove());return;}
+ const rowHeight=tbody.querySelector('tr')?.getBoundingClientRect().height||0,count=printBlankRowCount(filler.getBoundingClientRect().height,rowHeight);
+ if(count)tbody.insertAdjacentHTML('beforeend','<tr class="print-object-blank" aria-hidden="true"><td></td><td></td></tr>'.repeat(count));
+}
+function fitPrintPages(){document.querySelectorAll('#print-root .print-page').forEach(page=>{const viewport=page.querySelector('.print-viewport'),body=page.querySelector('.print-body'),notes=page.querySelector('.print-spare-notes'),width=viewport.clientWidth,height=viewport.clientHeight;body.style.transform='none';body.style.marginLeft='0';fillPrintObjectRows(body,true);if(notes)notes.style.display='none';
  const fits=scale=>{body.style.width=`${width/scale}px`;return body.scrollHeight*scale<=height-2&&body.scrollWidth*scale<=width+1;};
  let scale=1;if(!fits(1)){let low=.02,high=1;for(let i=0;i<15;i++){const mid=(low+high)/2;if(fits(mid))low=mid;else high=mid;}scale=low;fits(scale);}
  const spare=(height-body.scrollHeight*scale)/scale;if(notes&&spare>85){notes.style.display='block';notes.style.height=`${spare-18}px`;}
- body.style.transform=`scale(${scale})`;});}
+ fillPrintObjectRows(body);body.style.transform=`scale(${scale})`;});}
 function fieldHint(key){
  if(key==='scars_number')return 'With purchased Spiritual Defense, each scar adds +1 Damage Threshold; Heavy armor blocks this bonus.';
  if(key==='burden_penalty')return 'Extra burden is subtracted from Initiative, in addition to carrying and silver penalties.';
