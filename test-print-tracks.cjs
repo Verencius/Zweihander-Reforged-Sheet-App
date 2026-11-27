@@ -2,3 +2,6 @@ const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');con
 
 el('print-current-state').checked=false;const cleanPrint=ctx.printMarkup();assert(!cleanPrint.includes('class="print-stage-dot"'));assert(!cleanPrint.includes('class="current-skill"'));assert(!cleanPrint.includes('class="condition-penalty"'));
 console.log('Passed: current-state export is optional; clean export omits dots and penalty annotations.');
+
+vm.runInContext("current.values.starving=true;current.values.injuries_conditions='\\nTired\\n';overview();",ctx);
+const compactNotes=ctx.printMarkup();assert(compactNotes.includes('>Starving\nTired</div>'));
