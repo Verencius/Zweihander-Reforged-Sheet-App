@@ -756,3 +756,9 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 .supply-rating-heading>span,.supply-rating-max{display:inline}
 .sheet-burden{display:flex;flex-direction:column}
 .sheet-burden>.info-label{margin-top:auto}
+.supply-header-max{float:right;font-size:11px;line-height:inherit;letter-spacing:0;color:var(--accent);white-space:nowrap}
+.sheet-supplies>h3::after{display:none!important}
+#print-root .supply-header-max{font:700 9px/15px system-ui,sans-serif}
+#print-root .sheet-weapons .weapon-equip-mark{display:inline-block;width:13px;height:13px;font-size:0;line-height:0;border:1.2px solid #292017;background:#faf7ef;box-sizing:border-box;vertical-align:middle}
+#print-root .sheet-weapons .weapon-equip-mark.is-filled{background:#a62229;box-shadow:inset 0 0 0 2px #faf7ef}
+#print-root .sheet-tools>.sheet-text{min-height:22px;box-sizing:border-box;padding:4px 5px;line-height:14px}
