@@ -146,10 +146,11 @@ function field(f){if(f.key==='starving')f={...f,label:'Starving (used for Broad 
  else if(f.type==='textarea')control=`<textarea ${common}>${esc(v)}</textarea>`;
  else control=`<input ${common} type="${esc(f.type==='checkbox'?'checkbox':f.type==='number'?'number':'text')}" ${f.type==='checkbox'?(v===true||v===1||v==='1'?'checked':''):`value="${esc(v)}"`} ${['min','max','placeholder'].filter(k=>f[k]!=null).map(k=>`${k}="${esc(f[k])}"`).join(' ')}>`;
  const hint=fieldHint(f.key);return `<label for="${id}"${['peril_condition_track','damage_condition_track','peril_stress'].includes(f.key)?' class="condition-control"':''}>${hint?`<span class="info-label field-hint" id="${id}-hint">${esc(hint)}</span>`:''}<span class="field-caption">${esc(f.label)}</span>${control}</label>`;}
+function remainingRpWarning(left){return left>0?`You have ${left} unspent RP available for advancement.`:'';}
 function advancement(s){
  if(s.title==='Reward Points'){
   const c=calculate(current.values);
-  return `<article class="card advancement-card"><h3>Reward Points</h3><div class="reward-grid">${s.fields.map(field).join('')}<label><span class="field-caption">Total RP spent (first 9 Basic advances free)</span><output id="adv-spent">${c.spent}</output></label><label><span class="field-caption">RP remaining for advancement</span><output id="adv-left">${c.left}</output></label></div><p class="adv-note">Basic: 10 RP · Intermediate: 20 RP · Advanced: 30 RP · Unique: 10 RP · First 9 purchased Basic advances are free. Totals update immediately.</p></article>`;
+  return `<article class="card advancement-card"><h3>Reward Points</h3><div class="reward-grid">${s.fields.map(field).join('')}<label><span class="field-caption">Total RP spent (first 9 Basic advances free)</span><output id="adv-spent">${c.spent}</output></label><label><span class="field-caption">RP remaining for advancement</span><output id="adv-left">${c.left}</output></label></div><p id="adv-rp-warning" class="rp-unspent-warning" role="status" ${c.left>0?'':'hidden'}>${remainingRpWarning(c.left)}</p><p class="adv-note">Basic: 10 RP · Intermediate: 20 RP · Advanced: 30 RP · Unique: 10 RP · First 9 purchased Basic advances are free. Totals update immediately.</p></article>`;
  }
  const tier=TIERS.find(t=>s.fields.some(f=>f.key===`profession_${t}_name`));
  if(!tier)return null;
@@ -164,7 +165,7 @@ function advancement(s){
  for(let i=1;i<=3;i++)rows+=row('General Talent '+i,['talent_'+i,'talent_'+i+'_desc'],15+i);
  return `<article class="card advancement-card profession-card"><h3>${tier[0].toUpperCase()+tier.slice(1)} Profession <small>${(TIERS.indexOf(tier)+1)*10} RP / advance</small></h3><div class="profession-name">${control('name','Profession Name')}</div><div class="advance-rows">${rows}</div><p class="adv-note">Automatic keyword effects require Purchased. Focus an input to see its calculation hint.</p></article>`;
 }
-function updateAdvancement(){const c=calculate(current.values);if($('adv-spent'))$('adv-spent').textContent=c.spent;if($('adv-left'))$('adv-left').textContent=c.left;}
+function updateAdvancement(){const c=calculate(current.values);if($('adv-spent'))$('adv-spent').textContent=c.spent;if($('adv-left'))$('adv-left').textContent=c.left;const warning=$('adv-rp-warning');if(warning){warning.textContent=remainingRpWarning(c.left);warning.hidden=c.left<=0;}}
 function magicConfig(kind){return kind==='spell'?{title:'Spells',single:'Spell',prefix:'magic_',count:'spells_count',size:9,max:20}:{title:'Rituals',single:'Ritual',prefix:'ritual_',count:'rituals_count',size:7,max:10};}
 function magicCount(values,kind){const config=magicConfig(kind);let populated=0;for(let i=1;i<=config.max;i++)if(SECTIONS.find(s=>s.title===config.title).fields.slice((i-1)*config.size,i*config.size).some(f=>values[f.key]!==undefined&&values[f.key]!==''&&values[f.key]!==null))populated=i;return Math.min(config.max,Math.max(populated,Math.floor(Number(values[config.count])||0)));}
 function changeMagic(values,kind,action,index){const c=magicConfig(kind),count=magicCount(values,kind),fields=SECTIONS.find(s=>s.title===c.title).fields;
@@ -296,7 +297,7 @@ function helpLayout(){const mechanics=[
 ['Saving and full backups','Changes save in this browser on this device. Save JSON exports the current character. Gallery’s Export full backup includes all characters, portraits, campaigns, assignments and lock states. Restore backup adds copies without overwriting existing characters. Back up before replacing the app file or moving to another browser or device.'],
 ['Version and updates','About shows the installed version. Check for updates contacts the GitHub repository when you request it; internet access is required. If a newer version exists, Download update verifies and saves its HTML file. Export a full backup, close the app, replace Character Forge.html in the same folder and reopen it. About also links to GitHub for errors and suggestions.']
 ];return `<section class="help-page"><h3>Help</h3><p class="muted">How to use Character Forge and which mechanics it calculates automatically.</p>${mechanics.map(([title,text])=>`<article class="card help-card"><h4>${title}</h4><p>${text}</p></article>`).join('')}${talentGuide()}</section>`;}
-const APP_RELEASE={version:'1.0.3',date:'2026-11-27'};
+const APP_RELEASE={version:'1.0.4',date:'2026-11-27'};
 const UPDATE_ROOT='https://raw.githubusercontent.com/Verencius/Zweihander-Reforged-Sheet-App/main/';
 let appUpdate={status:'idle',message:'Check GitHub for a newer version.',release:null};
 function compareAppVersions(a,b){const parse=v=>/^\d+\.\d+\.\d+$/.test(String(v))?String(v).split('.').map(Number):null,x=parse(a),y=parse(b);if(!x||!y)throw Error('Invalid app version.');for(let i=0;i<3;i++)if(x[i]!==y[i])return x[i]>y[i]?1:-1;return 0;}
