@@ -953,3 +953,8 @@ aside .app-brand-subtitle{font:500 15px/1.3 system-ui,sans-serif;letter-spacing:
 .tracker-fields input,.tracker-fields select{height:32px;padding:4px 7px;margin-top:4px;font-size:13px}
 .tracker-card .tracker-days{display:grid;grid-template-columns:repeat(var(--tracker-day-count),minmax(13px,1fr));gap:3px;width:100%;overflow-x:auto;padding:2px 0 5px}
 .tracker-card .tracker-day{justify-self:center}
+/* Keep captions above controls instead of adding label text to input width. */
+.tracker-card .tracker-fields{grid-template-columns:minmax(100px,140px) minmax(0,1fr) 100px 100px;gap:14px;align-items:start;overflow:visible}
+.tracker-card .tracker-fields>label{display:flex;flex-direction:column;gap:5px;min-width:0;line-height:18px;white-space:normal}
+.tracker-card .tracker-fields input,.tracker-card .tracker-fields select{display:block;width:100%;min-width:0;margin:0;box-sizing:border-box;flex:0 0 32px}
+@media screen and (max-width:600px){.tracker-card .tracker-fields{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:8px}.tracker-card .tracker-fields>label{font-size:11px}}
