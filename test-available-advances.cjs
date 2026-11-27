@@ -4,5 +4,5 @@ vm.runInContext(`for(let i=1;i<=18;i++)current.values['profession_intermediate_t
 
 vm.runInContext("current.values={reward_points:20,reward_unique:0};tab='Advancement';render();updateAdvancement();",ctx);assert.equal(el('adv-rp-warning').hidden,false);assert(el('adv-rp-warning').textContent.includes('20 unspent RP'));
 vm.runInContext("current.values.reward_unique=2;updateAdvancement();",ctx);assert.equal(el('adv-rp-warning').hidden,true);assert.equal(el('adv-rp-warning').textContent,'');
-vm.runInContext("current.values.reward_unique=3;updateAdvancement();",ctx);assert.equal(el('adv-rp-warning').hidden,true);
-console.log('Passed: remaining RP warning updates immediately and appears only above zero.');
+vm.runInContext("current.values.reward_unique=3;updateAdvancement();",ctx);assert.equal(el('adv-rp-warning').hidden,false);assert(el('adv-rp-warning').textContent.includes('overspent by 10 RP'));
+for(const [tier,cost] of [['basic',10],['intermediate',20],['advanced',30]]){const values={['profession_'+tier+'_name']:'Current profession'};assert.equal(ctx.remainingRpWarning(cost-1,values),'');assert(ctx.remainingRpWarning(cost,values).includes('enough for an advance'));assert(ctx.remainingRpWarning(-1,values).includes('overspent'));assert.equal(ctx.remainingRpWarning(0,values),'');}console.log('Passed: RP warnings for overspending and current-tier cost, with smaller positive balances quiet.');

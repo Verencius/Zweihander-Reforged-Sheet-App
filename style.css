@@ -911,3 +911,6 @@ aside .app-brand-subtitle{font:500 15px/1.3 system-ui,sans-serif;letter-spacing:
 .gallery-mode .statusbar{margin-top:0}
 .rp-unspent-warning{margin:5px 10px 10px;padding:9px 12px;border:1px solid #b28c3b;border-left:4px solid #a62229;background:#efe0b9;color:#7d2523;font-size:13px;font-weight:600}
 .rp-unspent-warning[hidden]{display:none}
+/* Apply the full-width gold rule to the header row, not its nested text. */
+#overview .corruption-heading-row{background:#e7dfce;box-shadow:inset 0 2px 0 #c1ae80;padding:7px 9px;letter-spacing:.3px}
+#overview .corruption-heading-row>h3{background:transparent;box-shadow:none;border:0;padding:0;margin:0;font:700 14px/1.4 system-ui,sans-serif;letter-spacing:inherit}
