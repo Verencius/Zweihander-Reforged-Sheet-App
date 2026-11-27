@@ -840,3 +840,10 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 /* Keep the Personal sidebar in one continuous vertical stack. */
 @media screen and (min-width:701px){.personal-top-main{grid-column:1;grid-row:1}.personal-bottom-main{grid-column:1;grid-row:2}.personal-top-side{grid-column:2;grid-row:1 / span 2}}
 .personal-top-side,.personal-top-side>.personal-bottom-side{display:flex;flex-direction:column;gap:4px;min-width:0}
+.sheet-skills-stack{display:flex;flex-direction:column;gap:12px;min-width:0}
+.sheet-skills-stack>.sheet-panel{width:100%;box-sizing:border-box}
+.sheet-injuries-conditions .overview-controls{display:flex;flex-direction:column;gap:8px}
+.sheet-injuries-conditions .other-conditions{width:100%}
+.sheet-injuries-conditions textarea{width:100%;box-sizing:border-box}
+@media screen and (min-width:1201px){.sheet-combat>.sheet-skills-stack{grid-column:1;grid-row:1}}
+@media screen and (min-width:701px) and (max-width:1200px){.sheet-combat>.sheet-skills-stack{grid-column:1 / -1;grid-row:1}}
