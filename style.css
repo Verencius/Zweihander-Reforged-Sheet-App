@@ -856,3 +856,9 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 .personal-corruption .personal-malignancies-fields{grid-template-columns:minmax(0,1fr)}
 .personal-malignancies-fields textarea{min-height:130px}
 @media screen and (max-width:500px){.personal-scars .personal-fields{grid-template-columns:1fr}}
+/* Independent Personal columns prevent sidebar height from opening main-column gaps. */
+.personal-top-main{display:flex;flex-direction:column;gap:4px}
+.personal-alignment .personal-fields{grid-template-columns:minmax(0,1fr)}
+.personal-alignment .personal-fields>label{grid-column:1 / -1!important}
+.personal-top-side .personal-scars .personal-fields{grid-template-columns:minmax(0,1fr)}
+@media screen and (min-width:701px){.personal-layout>.personal-top-main,.personal-layout>.personal-top-side{grid-row:1}}
