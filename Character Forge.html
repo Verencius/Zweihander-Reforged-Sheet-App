@@ -741,8 +741,7 @@ function calculate(v){
  attributes[attr]={score:adjustedScore,bonus:bonusParts.reduce((s,c)=>s+c.value,0),advances,scoreParts,bonusParts};}
  const B=attr=>attributes[attr].bonus,perilPenalty=({minus5:-5,minus10:-10,minus15:-15,exhausted:-20})[v.peril_condition_track]||0;
  for(const [skill,attr] of Object.entries(SKILLS)){let ranks=0;for(const t of TIERS)for(let i=1;i<=6;i++)if(on(`profession_${t}_toggle_${i}`)&&v[`profession_${t}_skill_${i}`]===skill)ranks++;const rank=Math.min(3,ranks),parts=[{label:attr,value:attributes[attr].score},{label:rank+' purchased ranks',value:rank*10}];
- // The supplied Twig omits talismans from Thievery and Toughness totals.
- if(!['Thievery','Toughness'].includes(skill)&&Array.from({length:9},(_,i)=>lower('object_'+(i+2))).some(s=>s.includes('talisman of '+skill.toLowerCase())))parts.push({label:'Talisman',value:5});
+ if(Array.from({length:9},(_,i)=>lower('object_'+(i+2))).some(s=>s.includes('talisman of '+skill.toLowerCase())))parts.push({label:'Talisman',value:5});
  const extra=skill==='Melee'?['saber-toothed','mighty thews','horrific claws','razor-sharp claws']:skill==='Ranged'?['blue-blooded','fieldwarden']:[];
  for(const talent of names('ancestral'))for(const kw of extra)if(talent.includes(kw))parts.push({label:kw,value:5});
  if(a('jack of all trades')&&rank===0)parts.push({label:'Jack of All Trades',value:5});const total=parts.reduce((s,c)=>s+c.value,0);skills[skill]={rank,total,attribute:attr,parts,current:total+perilPenalty};}
@@ -892,7 +891,7 @@ function magicSection(kind,printing=false){const c=magicConfig(kind),count=magic
 function section(s,printing=false){if(s.title==='Spells'||s.title==='Rituals')return magicSection(s.title==='Spells'?'spell':'ritual',printing);const layout=advancement(s);if(layout)return layout;return `<article class="card"><h3>${esc(s.title)}</h3><div class="fields">${s.fields.map(field).join('')}</div></article>`;}
 function equipmentHint(kind,values=current.values){const c=calculate(values),hints={
  tools:`Carrying limit: ${c.toolsLimit} tools. Extra tools add burden and reduce Initiative.`,
- objects:'Use “Talisman of [Skill]” for +5% once per skill (except Thievery and Toughness in this sheet). Holding your memento ignores Peril Track penalties in a related Brush With Death scene.',
+ objects:'Use “Talisman of [Skill]” for +5% once per skill. Holding your memento ignores Peril Track penalties in a related Brush With Death scene.',
  supplies:`Maximum supply rating: ${c.supplyMax}. Uses final Intelligence Bonus (IB), including adjustments and advancements.`,
  weapons:`Carrying limit: ${c.weaponsLimit} weapons. Equip to apply Hardened (+1 Peril Threshold) or Defensive (+1 Damage Threshold); Ruined cancels these benefits.`,
  armor:"DTh adds to Damage Threshold; check the Brawn Bonus requirement. Keywords: Heavy (blocks Spiritual Defense), Ill-fitted (−3 Initiative), Maker's Mark (+1 DTh), Ruined (0 DTh)."
@@ -990,7 +989,7 @@ function removeCharacter(id){const character=characters.find(c=>c.id===id);if(!c
  characters=characters.filter(c=>c.id!==id);if(!characters.length)characters=[blank()];if(current.id===id)current=characters[0];persist();render();if(storage)$('status').textContent=`Removed ${name}`;return true;}
 function helpLayout(){const mechanics=[
 ['Attributes and bonuses','New characters start with base attributes of 30. Purchased primary adjustments add +5% before the tens digit is calculated. Secondary bonus advances, supported ancestral talents and custom bonuses are then added.'],
-['Skills','Success uses the adjusted governing attribute, +10% per purchased rank (maximum three ranks), and supported talent and talisman bonuses. A Talisman of [Skill] adds +5 once per skill; Thievery and Toughness are excluded, following the supplied template. Peril penalties are shown separately.'],
+['Skills','Success uses the adjusted governing attribute, +10% per purchased rank (maximum three ranks), and supported talent and talisman bonuses. A Talisman of [Skill] adds +5 once per skill, including Thievery and Toughness. Peril penalties are shown separately.'],
 ['Peril and Horror','Peril stages apply 0, 0, −5, −10, −15 or −20 to skill tests. Horror applies −2 (Stressed), −4 (Frightened) or −6 (Terrified) to inflicted damage and peril. The penalty is displayed beside weapon damage; the entered damage formula stays unchanged. Horror also affects supported conditional talents.'],
 ['Thresholds','Peril Threshold starts at Willpower Bonus +3. Damage Threshold starts at Brawn Bonus, or Fellowship Bonus when a supported talent allows it and it is higher. Armor, equipped weapon qualities, supported talents and situational modifiers are included. Subsequent threshold steps add +6, +12 and +18. Starving disables Broad-bellied’s Peril benefit.'],
 ['Armor and weapons','Only equipped, non-Ruined weapons provide Hardened (+1 Peril Threshold) or Defensive (+1 Damage Threshold); each quality applies once. Ruined armor has 0 protection. Maker’s Mark adds +1; otherwise an unmet Brawn Bonus requirement can reduce armor protection, with a minimum of 1. Heavy armor blocks Spiritual Defense.'],
