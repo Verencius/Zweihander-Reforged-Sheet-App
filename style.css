@@ -837,3 +837,6 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 
 /* Extra writing lines are real rows, using exactly the first row's geometry. */
 #print-root .print-objects-filler{background:none;flex:1;min-height:0}
+/* Keep the Personal sidebar in one continuous vertical stack. */
+@media screen and (min-width:701px){.personal-top-main{grid-column:1;grid-row:1}.personal-bottom-main{grid-column:1;grid-row:2}.personal-top-side{grid-column:2;grid-row:1 / span 2}}
+.personal-top-side,.personal-top-side>.personal-bottom-side{display:flex;flex-direction:column;gap:4px;min-width:0}
