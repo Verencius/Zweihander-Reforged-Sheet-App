@@ -816,7 +816,6 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .sheet-burden>.burden-table tr{height:16.6667%}
 #print-root .sheet-burden>.burden-table td{height:auto}
 #print-root .sheet-burden>.print-objects-silver{flex:0 0 auto;margin-top:0}
-/* Continue the six real Object rows with equally spaced writing rules. */
-#print-root .sheet-burden>.burden-table{flex:0 0 auto}
-#print-root .print-objects-filler{flex:1;min-height:0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 21px,#d5cbb6 21px,#d5cbb6 22px)}
-#print-root .print-objects-silver{flex:0 0 auto;margin-top:0}
+/* Printed Objects ends after six rows and the Silver line. */
+#print-root .print-equipment>.sheet-burden{grid-row:2;align-self:start}
+#print-root .print-objects-silver{margin-top:0}
