@@ -868,3 +868,8 @@ nav .campaign-nav-group .campaign-nav{margin-left:0;border-left:0;font-size:14px
 #print-root .corruption-heading-row{padding:3px 5px;gap:4px}
 #print-root .corruption-heading-row>h3{font:700 10px/1.3 Georgia,serif;letter-spacing:.2px}
 #print-root .corruption-heading-row>.corruption-summary{flex:0 1 auto}
+.personal-corruption>.personal-fields:not(.personal-malignancies-fields)>label{display:flex;flex-direction:column;padding:8px;gap:5px;border-left:3px solid #a62229;background:#a6222909}
+.personal-corruption>.personal-fields>label:has([data-key="corruption_permanent"]){border-left-color:#886a2c;background:#b49a5930}
+.personal-corruption>.personal-fields:not(.personal-malignancies-fields) .field-caption{order:-1;font-size:12px;font-weight:700;color:#9a232a;letter-spacing:.3px}
+.personal-corruption>.personal-fields>label:has([data-key="corruption_permanent"]) .field-caption{color:#705316}
+.personal-corruption>.personal-fields:not(.personal-malignancies-fields) input{font-size:18px;font-weight:600;text-align:center}
