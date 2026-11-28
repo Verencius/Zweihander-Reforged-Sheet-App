@@ -974,3 +974,4 @@ aside .app-brand-subtitle{font:500 15px/1.3 system-ui,sans-serif;letter-spacing:
 .tracker-notes-grid{display:grid;grid-auto-rows:76.2mm;gap:4mm;transform-origin:top left;position:absolute;top:0;left:0}
 .tracker-notes-grid .tracker-note-page{border:1px dashed #b4a078}
 @media print{body.tracker-printing #print-root{width:190mm!important}body.tracker-printing #print-root .tracker-notes-sheet{break-inside:avoid;break-after:auto}body.tracker-printing #print-root .tracker-note-page{break-after:auto;page-break-after:auto}}
+@media print{#print-root .tracker-notes-sheet{height:276mm;break-before:page;page-break-before:always;break-inside:avoid;break-after:auto}#print-root .tracker-notes-sheet .tracker-note-page{break-after:auto;page-break-after:auto}body.tracker-printing #print-root .tracker-notes-sheet{break-before:auto;page-break-before:auto}}

@@ -25,3 +25,8 @@ vm.runInContext("current.values.condition_trackers=JSON.stringify([{name:'Smog s
 
 for(const count of [1,2,6,7,33,100]){const layout=ctx.trackerSheetLayout(count,718,1046);assert(layout.width*layout.scale<=718.001);assert(layout.height*layout.scale<=1046.001);assert(layout.scale<=1);assert(layout.columns>=1);}assert.equal(ctx.trackerSheetLayout(6,718,1046).scale,1);
 console.log('Passed: all tracker notes fit one A4 sheet; six notes keep their 3-inch size.');
+
+el('print-affliction-trackers').checked=false;assert(!ctx.printMarkup().includes('class="tracker-notes-sheet"'));
+el('print-affliction-trackers').checked=true;const fullPrint=ctx.printMarkup();assert.equal((fullPrint.match(/class="tracker-notes-sheet"/g)||[]).length,1);assert.equal((fullPrint.match(/class="tracker-note-page"/g)||[]).length,1);
+vm.runInContext("current.values.condition_trackers='[]';overview();",ctx);assert(!ctx.printMarkup().includes('class="tracker-notes-sheet"'));
+console.log('Passed: optional tracker sheet appends to character export only when notes exist.');
